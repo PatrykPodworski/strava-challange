@@ -2,7 +2,7 @@ import Athlete from "./Athlete";
 import { z } from "zod";
 import config from "@/app/utils/config";
 
-const URL = `https://api.airtable.com/v0/${config.AIRTABLE_BASE_ID}/Athletes?maxRecords=20&view=Grid%20view`;
+const URL = `https://api.airtable.com/v0/${config.AIRTABLE_BASE_ID}/Athletes?maxRecords=15&view=Grid%20view`;
 
 const getAthletes = async () => {
   const response = await fetch(URL, {
