@@ -5,12 +5,15 @@ import formatToKilometers from "./utils/formatToKilometers";
 
 const Home = async () => {
   const athletes = await getAthletesWithStatistics();
+  const sorted = athletes.sort(
+    (a, b) => b.statistics.totalTime - a.statistics.totalTime
+  );
 
   return (
     <main className="flex min-h-screen flex-col items-center p-8">
       <h1 className="text-4xl font-bold text-center mb-8">Strava Challenge</h1>
       <div className="flex flex-col gap-8">
-        {[...athletes, ...athletes, ...athletes].map((athlete, index) => (
+        {sorted.map((athlete, index) => (
           <div key={athlete.athlete.id} className="flex gap-3 items-center">
             <div
               className={clsx(
