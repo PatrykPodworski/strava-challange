@@ -3,6 +3,16 @@ import getAthletesWithStatistics from "./lib/getAthletesWithStatistics";
 import formatToHours from "./utils/formatToHours";
 import formatToKilometers from "./utils/formatToKilometers";
 
+// TODO: P0 Adjust start and end date
+// TODO: P0 Show start and end date
+// TODO: P0 Refresh token flow
+// TODO: P1 Link to Athlete
+// TODO: P1 Club link
+// TODO: P1 Change title
+// TODO: P1 Change favicon
+// TODO: P1 Refreshing data
+// TODO: P2 Oauth flow
+
 const Home = async () => {
   const athletes = await getAthletesWithStatistics();
   const sorted = athletes.sort(
