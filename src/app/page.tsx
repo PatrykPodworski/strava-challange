@@ -2,6 +2,7 @@ import clsx from "clsx";
 import getAthletesWithStatistics from "./lib/getAthletesWithStatistics";
 import formatToHours from "./utils/formatToHours";
 import formatToKilometers from "./utils/formatToKilometers";
+import config from "./utils/config";
 
 // TODO: P0 Adjust start and end date
 // TODO: P0 Show start and end date
@@ -12,8 +13,11 @@ import formatToKilometers from "./utils/formatToKilometers";
 // TODO: P1 Change favicon
 // TODO: P1 Refreshing data
 // TODO: P2 Oauth flow
+// TODO: P3 Duration progress bar
+// TODO: P3 Cumulative values with examples
 
 const Home = async () => {
+  const { CHALLENGE_END_DATE, CHALLENGE_START_DATE } = config;
   const athletes = await getAthletesWithStatistics();
   const sorted = athletes.sort(
     (a, b) => b.statistics.totalTime - a.statistics.totalTime
@@ -21,7 +25,11 @@ const Home = async () => {
 
   return (
     <main className="flex min-h-screen flex-col items-center p-8">
-      <h1 className="text-4xl font-bold text-center mb-8">Strava Challenge</h1>
+      <h1 className="text-4xl font-bold text-center mb-2">Strava Challenge</h1>
+      <p className="text-center text-gray-500 mb-8">
+        {CHALLENGE_START_DATE.toDateString()} -{" "}
+        {CHALLENGE_END_DATE.toDateString()}
+      </p>
       <div className="flex flex-col gap-8">
         {sorted.map((athlete, index) => (
           <div key={athlete.athlete.id} className="flex gap-3 items-center">
