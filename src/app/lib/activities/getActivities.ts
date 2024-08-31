@@ -1,8 +1,10 @@
 import { z } from "zod";
 import Activity from "./Activity";
 import config from "@/app/utils/config";
+import { invalidTokenError } from "./errors";
 
-const getActivities = async (token: string) => {
+const getActivities = async (userId: number, token: string) => {
+  console.log(`[getActivities] Getting activities for ${userId}`);
   const url = getUrl();
   const response = await fetch(url, {
     headers: {
@@ -12,14 +14,20 @@ const getActivities = async (token: string) => {
 
   const data = await response.json();
   if ("errors" in data) {
-    // TODO: P2 Handle Strava API errors
-    console.log(data);
-    return [];
+    console.log(
+      `[getActivities] Error getting activities for ${userId}, ${JSON.stringify(
+        data
+      )}`
+    );
+
+    // TODO: P2 Detect invalid token
+    throw new Error(invalidTokenError);
   }
 
   const parsed = await activitySchema.parseAsync(data);
   const mapped: Activity[] = parsed.map(mapActivity);
 
+  console.log(`[getActivities] Got ${mapped.length} activities for ${userId}`);
   return mapped;
 };
 

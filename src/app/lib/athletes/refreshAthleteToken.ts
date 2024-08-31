@@ -14,18 +14,19 @@ const refreshAthleteToken = async (athlete: Athlete) => {
   if ("errors" in data) {
     // TODO: P2 Handle Strava API errors
     console.log(
-      `[refreshAthleteToken] Error refreshing token for ${athlete.id}, ${data}`
+      `[refreshAthleteToken] Error refreshing token for ${athlete.userId}, ${data}`
     );
-    return;
+    throw new Error("Error refreshing token");
   }
 
   const parsed = responseSchema.parse(data);
-  await updateAthlete(athlete.id, {
+  const updatedAthlete = await updateAthlete(athlete.id, {
     accessToken: parsed.access_token,
     refreshToken: parsed.refresh_token,
   });
 
-  console.log(`[refreshAthleteToken] Refreshed token for ${athlete.id}`);
+  console.log(`[refreshAthleteToken] Refreshed token for ${athlete.userId}`);
+  return updatedAthlete;
 };
 
 // TODO: P3 Use access token expiration time

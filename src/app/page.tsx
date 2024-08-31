@@ -5,8 +5,6 @@ import formatToKilometers from "./utils/formatToKilometers";
 import config from "./utils/config";
 
 // TODO: P0 Adjust start and end date
-// TODO: P0 Show start and end date
-// TODO: P0 Refresh token flow
 // TODO: P0 Data validation screen
 // TODO: P1 Link to Athlete
 // TODO: P1 Club link
@@ -15,6 +13,7 @@ import config from "./utils/config";
 // TODO: P1 Refreshing data
 // TODO: P2 Unify imports
 // TODO: P2 Oauth flow
+// TODO: P3 Logging wrapper (start, end, errors)
 // TODO: P3 Duration progress bar
 // TODO: P3 Cumulative values with examples
 
