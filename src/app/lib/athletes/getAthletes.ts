@@ -1,6 +1,6 @@
-import Athlete from "./Athlete";
 import { z } from "zod";
 import config from "@/app/utils/config";
+import Athlete, { athleteSchema } from "./Athlete";
 
 const URL = `https://api.airtable.com/v0/${config.AIRTABLE_BASE_ID}/Athletes?maxRecords=15&view=Grid%20view`;
 
@@ -12,29 +12,21 @@ const getAthletes = async () => {
   });
 
   const data = await response.json();
-  const parsed = await athletesSchema.parseAsync(data.records);
+  const parsed = await responseSchema.parseAsync(data.records);
   const mapped = parsed.map(mapAthlete);
   return mapped;
 };
 
-const athletesSchema = z.array(
+const responseSchema = z.array(
   z.object({
-    fields: z.object({
-      id: z.number(),
-      name: z.string().min(1),
-      token: z.string().min(1),
-      avatarUrl: z.string().min(1),
-    }),
+    fields: athleteSchema,
   })
 );
 
-const mapAthlete = (input: z.infer<typeof athletesSchema>[number]): Athlete => {
-  return {
-    id: input.fields.id,
-    name: input.fields.name,
-    token: input.fields.token,
-    avatarUrl: input.fields.avatarUrl,
-  };
-};
+type Response = z.infer<typeof responseSchema>;
+
+const mapAthlete = (input: Response[number]): Athlete => ({
+  ...input.fields,
+});
 
 export default getAthletes;
