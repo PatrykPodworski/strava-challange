@@ -5,14 +5,15 @@ import formatToKilometers from "./utils/formatToKilometers";
 import config from "./utils/config";
 
 // TODO: P0 Adjust start and end date
-// TODO: P0 Show start and end date
-// TODO: P0 Refresh token flow
+// TODO: P0 Data validation screen
 // TODO: P1 Link to Athlete
 // TODO: P1 Club link
 // TODO: P1 Change title
 // TODO: P1 Change favicon
 // TODO: P1 Refreshing data
+// TODO: P2 Unify imports
 // TODO: P2 Oauth flow
+// TODO: P3 Logging wrapper (start, end, errors)
 // TODO: P3 Duration progress bar
 // TODO: P3 Cumulative values with examples
 
@@ -32,7 +33,7 @@ const Home = async () => {
       </p>
       <div className="flex flex-col gap-8">
         {sorted.map((athlete, index) => (
-          <div key={athlete.athlete.id} className="flex gap-3 items-center">
+          <div key={athlete.athlete.userId} className="flex gap-3 items-center">
             <div
               className={clsx(
                 "font-bold text-xl text-white rounded-full w-8 h-8 flex items-center justify-center",

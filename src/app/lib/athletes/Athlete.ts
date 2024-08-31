@@ -1,8 +1,10 @@
 type Athlete = {
-  id: number;
+  id: string;
+  userId: number;
   name: string;
-  token: string;
-  avatarUrl: string;
+  accessToken: string;
+  refreshToken: string;
+  appCode: string;
 };
 
 export default Athlete;

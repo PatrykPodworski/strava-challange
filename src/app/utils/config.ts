@@ -7,15 +7,21 @@ const setEnvs = () => {
   const {
     AIRTABLE_API_KEY,
     AIRTABLE_BASE_ID,
+    AIRTABLE_TABLE,
     CHALLENGE_START_DATE,
     CHALLENGE_END_DATE,
+    STRAVA_CLIENT_ID,
+    STRAVA_CLIENT_SECRET,
   } = process.env;
 
   if (
     !AIRTABLE_API_KEY ||
     !AIRTABLE_BASE_ID ||
+    !AIRTABLE_TABLE ||
     !CHALLENGE_START_DATE ||
-    !CHALLENGE_END_DATE
+    !CHALLENGE_END_DATE ||
+    !STRAVA_CLIENT_ID ||
+    !STRAVA_CLIENT_SECRET
   ) {
     throw new Error("Missing environment variables");
   }
@@ -33,6 +39,9 @@ const setEnvs = () => {
   const envs = {
     AIRTABLE_API_KEY,
     AIRTABLE_BASE_ID,
+    AIRTABLE_TABLE,
+    STRAVA_CLIENT_ID: STRAVA_CLIENT_ID,
+    STRAVA_CLIENT_SECRET: STRAVA_CLIENT_SECRET,
     CHALLENGE_START_DATE: startDate,
     CHALLENGE_END_DATE: endDate,
   } as const;
