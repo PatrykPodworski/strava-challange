@@ -1,16 +1,16 @@
 import clsx from "clsx";
+import Image from "next/image";
 import getAthletesWithStatistics from "./lib/getAthletesWithStatistics";
 import formatToHours from "./utils/formatToHours";
 import formatToKilometers from "./utils/formatToKilometers";
 import config from "./utils/config";
 
-// TODO: P0 Adjust start and end date
 // TODO: P0 Data validation screen
+// TODO: P0 Last update date
+// TODO: P0 Adjust start and end date
+// TODO: P1 Refreshing data
 // TODO: P1 Link to Athlete
 // TODO: P1 Club link
-// TODO: P1 Change title
-// TODO: P1 Change favicon
-// TODO: P1 Refreshing data
 // TODO: P2 Unify imports
 // TODO: P2 Oauth flow
 // TODO: P3 Logging wrapper (start, end, errors)
@@ -26,11 +26,19 @@ const Home = async () => {
 
   return (
     <main className="flex min-h-screen flex-col items-center p-8">
-      <h1 className="text-4xl font-bold text-center mb-2">Strava Challenge</h1>
-      <p className="text-center text-gray-500 mb-8">
-        {CHALLENGE_START_DATE.toDateString()} -{" "}
-        {CHALLENGE_END_DATE.toDateString()}
-      </p>
+      <div className="flex items-center mb-8 gap-4">
+        <Image src="/trophy.png" alt="trophy" width={128} height={128} />
+        <div className="max-w-sm">
+          <h1 className="text-4xl font-bold mb-2">
+            XtraMile Sport Challenge 2024
+          </h1>
+          <p className="text-gray-500">
+            {CHALLENGE_START_DATE.toDateString()} -{" "}
+            {CHALLENGE_END_DATE.toDateString()}
+          </p>
+        </div>
+      </div>
+
       <div className="flex flex-col gap-8">
         {sorted.map((athlete, index) => (
           <div key={athlete.athlete.userId} className="flex gap-3 items-center">
