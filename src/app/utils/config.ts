@@ -7,6 +7,7 @@ const setEnvs = () => {
   const {
     AIRTABLE_API_KEY,
     AIRTABLE_BASE_ID,
+    AIRTABLE_TABLE,
     CHALLENGE_START_DATE,
     CHALLENGE_END_DATE,
   } = process.env;
@@ -14,6 +15,7 @@ const setEnvs = () => {
   if (
     !AIRTABLE_API_KEY ||
     !AIRTABLE_BASE_ID ||
+    !AIRTABLE_TABLE ||
     !CHALLENGE_START_DATE ||
     !CHALLENGE_END_DATE
   ) {
@@ -33,6 +35,7 @@ const setEnvs = () => {
   const envs = {
     AIRTABLE_API_KEY,
     AIRTABLE_BASE_ID,
+    AIRTABLE_TABLE,
     CHALLENGE_START_DATE: startDate,
     CHALLENGE_END_DATE: endDate,
   } as const;
