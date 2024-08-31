@@ -13,7 +13,6 @@ export const updateAthlete = async (id: string, data: InputData) => {
   });
 
   const updated = await response.json();
-  console.log(updated);
 };
 
 type InputData = Partial<Omit<Athlete, "id">>;

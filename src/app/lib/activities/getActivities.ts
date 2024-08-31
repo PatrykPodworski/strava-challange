@@ -12,6 +12,7 @@ const getActivities = async (token: string) => {
 
   const data = await response.json();
   if ("errors" in data) {
+    // TODO: P2 Handle Strava API errors
     console.log(data);
     return [];
   }
