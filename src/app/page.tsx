@@ -34,7 +34,7 @@ const Home = async () => {
       </p>
       <div className="flex flex-col gap-8">
         {sorted.map((athlete, index) => (
-          <div key={athlete.athlete.id} className="flex gap-3 items-center">
+          <div key={athlete.athlete.userId} className="flex gap-3 items-center">
             <div
               className={clsx(
                 "font-bold text-xl text-white rounded-full w-8 h-8 flex items-center justify-center",

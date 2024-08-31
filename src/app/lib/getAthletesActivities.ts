@@ -6,7 +6,7 @@ const getAthletesActivities = async (athletes: Athlete[]) => {
     athletes.map(async (athlete) => {
       return {
         athlete: athlete,
-        activities: await getActivities(athlete.token),
+        activities: await getActivities(athlete.accessToken),
       };
     })
   );
