@@ -18,6 +18,8 @@ import { format } from "date-fns";
 // TODO: P3 Duration progress bar
 // TODO: P3 Cumulative values with examples
 
+export const revalidate = 60;
+
 const Home = async () => {
   const { CHALLENGE_END_DATE, CHALLENGE_START_DATE } = config;
   const athletes = await getAthletesWithStatistics();
