@@ -4,6 +4,7 @@ import getAthletesWithStatistics from "./lib/getAthletesWithStatistics";
 import formatToHours from "./utils/formatToHours";
 import formatToKilometers from "./utils/formatToKilometers";
 import config from "./utils/config";
+import { format } from "date-fns";
 
 // TODO: P0 Data validation screen
 // TODO: P0 Last update date
@@ -24,6 +25,8 @@ const Home = async () => {
     (a, b) => b.statistics.totalTime - a.statistics.totalTime
   );
 
+  const lastUpdate = new Date();
+
   return (
     <div className="flex flex-col justify-between min-h-screen p-8">
       <main className="flex flex-col items-center ">
@@ -39,8 +42,7 @@ const Home = async () => {
             </p>
           </div>
         </div>
-
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 mb-8">
           {sorted.map((athlete, index) => (
             <div
               key={athlete.athlete.userId}
@@ -54,9 +56,9 @@ const Home = async () => {
               >
                 {index + 1}
               </div>
-              <div className="flex flex-col ">
+              <div className="flex flex-col text-lg">
                 <span>{athlete.athlete.name}</span>
-                <p className="text-gray-500 text-sm self-end">
+                <p className="text-gray-500 text-md self-end">
                   <span>
                     {formatToHours(athlete.statistics.totalTime)},{" "}
                     {formatToKilometers(athlete.statistics.totalDistance)}
@@ -66,6 +68,9 @@ const Home = async () => {
             </div>
           ))}
         </div>
+        <p className="text-gray-400 text-sm">
+          Last update: {format(lastUpdate, "dd.MM.yyyy, HH:mm:ss")}
+        </p>
       </main>
       <footer className="self-end text-end text-gray-400 text-xs">
         <p>
