@@ -4,12 +4,9 @@ import getAthletesWithStatistics from "./lib/getAthletesWithStatistics";
 import formatToHours from "./utils/formatToHours";
 import formatToKilometers from "./utils/formatToKilometers";
 import config from "./utils/config";
-import { format } from "date-fns";
 
 // TODO: P0 Data validation screen
-// TODO: P0 Last update date
 // TODO: P0 Adjust start and end date
-// TODO: P1 Refreshing data
 // TODO: P1 Link to Athlete
 // TODO: P1 Club link
 // TODO: P2 Unify imports
@@ -70,11 +67,12 @@ const Home = async () => {
             </div>
           ))}
         </div>
-        <p className="text-gray-400 text-sm">
-          Last update: {format(lastUpdate, "dd.MM.yyyy, HH:mm:ss")}
+        <p className="text-gray-300 text-sm">
+          Last update: {lastUpdate.toLocaleDateString()}{" "}
+          {lastUpdate.toLocaleTimeString()}
         </p>
       </main>
-      <footer className="self-end text-end text-gray-400 text-xs">
+      <footer className="self-end text-end text-gray-300 text-xs">
         <p>
           Icons by{" "}
           <a href="https://freepik.com" className="hover:underline">
