@@ -1,5 +1,3 @@
-import { formatDuration, intervalToDuration } from "date-fns";
-
 const formatToHours = (seconds: number) => {
   const hours = Math.floor(seconds / 3600);
   const minutes = Math.floor((seconds % 3600) / 60);
