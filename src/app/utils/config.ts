@@ -1,4 +1,3 @@
-import { parseISO } from "date-fns";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -26,12 +25,12 @@ const setEnvs = () => {
     throw new Error("Missing environment variables");
   }
 
-  const startDate = parseISO(CHALLENGE_START_DATE);
+  const startDate = new Date(CHALLENGE_START_DATE);
   if (isNaN(startDate.getTime())) {
     throw new Error("Invalid CHALLENGE_START_DATE");
   }
 
-  const endDate = parseISO(CHALLENGE_END_DATE);
+  const endDate = new Date(CHALLENGE_END_DATE);
   if (isNaN(endDate.getTime())) {
     throw new Error("Invalid CHALLENGE_END_DATE");
   }
