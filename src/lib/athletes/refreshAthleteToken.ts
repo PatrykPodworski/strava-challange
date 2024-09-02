@@ -1,5 +1,5 @@
 import { z } from "zod";
-import config from "@/app/utils/config";
+import config from "@/utils/config";
 import Athlete from "./Athlete";
 import { updateAthlete } from "./updateAthlete";
 

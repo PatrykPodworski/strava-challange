@@ -1,6 +1,6 @@
 import { z } from "zod";
 import Activity from "./Activity";
-import config from "@/app/utils/config";
+import config from "@/utils/config";
 import { invalidTokenError } from "./errors";
 
 const getActivities = async (userId: number, token: string) => {

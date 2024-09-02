@@ -1,4 +1,4 @@
-import config from "@/app/utils/config";
+import config from "@/utils/config";
 import Athlete from "./Athlete";
 import { mapAthlete, recordSchema } from "./Record";
 

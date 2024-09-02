@@ -1,7 +1,7 @@
 import clsx from "clsx";
-import Athlete from "@/app/lib/athletes/Athlete";
-import formatToHours from "@/app/utils/formatToHours";
-import formatToKilometers from "@/app/utils/formatToKilometers";
+import Athlete from "@/lib/athletes/Athlete";
+import formatToHours from "@/utils/formatToHours";
+import formatToKilometers from "@/utils/formatToKilometers";
 
 export const AthleteListItem = ({
   athlete,
