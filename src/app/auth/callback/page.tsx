@@ -47,8 +47,12 @@ const AuthCallback = () => {
   return (
     <main className="text-center grow">
       <h2 className="text-xl font-bold">
-        {`Congratulations, ${athlete.name}! You've joined the challenge. Your results should appear in the leaderboard in 2 minutes.`}
+        {`Congratulations, ${athlete.name}! `}
       </h2>
+      <p>
+        You&apos;ve joined the challenge. Your results should appear in the
+        leaderboard in 2 minutes.
+      </p>
       <p>
         Click{" "}
         <Link href="/" className="underline text-blue-500 hover:text-blue-700">
