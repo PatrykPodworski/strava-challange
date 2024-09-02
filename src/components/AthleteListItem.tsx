@@ -24,7 +24,7 @@ export const AthleteListItem = ({
       </div>
       <div className="flex flex-col text-lg">
         <span>{athlete.name}</span>
-        <p className="text-gray-500 text-md self-end">
+        <p className="text-gray-500 text-md">
           <span>
             {formatToHours(statistics.totalTime)},{" "}
             {formatToKilometers(statistics.totalDistance)}
