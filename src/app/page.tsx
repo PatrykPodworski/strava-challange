@@ -3,12 +3,13 @@ import { AthleteListItem } from "../components/AthleteListItem";
 import config from "@/utils/config";
 
 // TODO: P0 Data validation screen
-// TODO: P0 Adjust start and end date
 // TODO: P1 Club link
 // TODO: P2 Unify imports
 // TODO: P3 Logging wrapper (start, end, errors)
 // TODO: P3 Duration progress bar
 // TODO: P3 Cumulative values with examples
+// TODO: P3 Compare with previous year
+// TODO: P3 Remember the user
 
 export const revalidate = 60;
 
@@ -25,8 +26,8 @@ const Home = async () => {
   const lastUpdate = new Date();
 
   return (
-    <main className="flex flex-col items-center grow gap-8">
-      <div className="flex flex-col gap-4">
+    <main className="flex flex-col items-center grow gap-2 sm:gap-8">
+      <div className="flex flex-col sm:gap-4">
         {sorted.map((data, index) => (
           <AthleteListItem
             key={data.athlete.userId}
@@ -40,13 +41,11 @@ const Home = async () => {
         Last update: {lastUpdate.toLocaleDateString()}{" "}
         {lastUpdate.toLocaleTimeString()}
       </p>
-      <div className="flex flex-col gap-2 items-center">
-        <p className="max-w-prose">
-          Not on the list? Click the button below to join the challenge!
-        </p>
+      <div className="flex flex-col gap-2 items-center text-center">
+        <p>Not on the list? Click the button below to join the challenge!</p>
         <a
           href={joinUrl}
-          className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded"
+          className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 rounded text-center"
         >
           Join the challenge
         </a>
