@@ -1,10 +1,11 @@
 "use client";
 
+import { LoadingIndicator } from "@/components/LoadingIndicator";
 import Athlete from "@/lib/athletes/Athlete";
 import { initializeAthlete } from "@/lib/athletes/initializeAthlete";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 // TODO: P2 Handle refresh
 // TODO: P2 Handle already added status
@@ -40,11 +41,7 @@ const AuthCallback = () => {
   }
 
   if (!athlete) {
-    return (
-      <main className="text-center grow">
-        <p className="animate-spin">Loading...</p>
-      </main>
-    );
+    return <LoadingIndicator />;
   }
 
   return (
@@ -63,4 +60,12 @@ const AuthCallback = () => {
   );
 };
 
-export default AuthCallback;
+const SuspenseAuthCallback = () => {
+  return (
+    <Suspense fallback={<LoadingIndicator />}>
+      <AuthCallback />
+    </Suspense>
+  );
+};
+
+export default SuspenseAuthCallback;
