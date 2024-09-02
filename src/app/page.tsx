@@ -1,7 +1,7 @@
 import Image from "next/image";
-import getAthletesWithStatistics from "./lib/getAthletesWithStatistics";
-import config from "./utils/config";
-import { AthleteListItem } from "./components/AthleteListItem";
+import getAthletesWithStatistics from "../lib/getAthletesWithStatistics";
+import config from "../utils/config";
+import { AthleteListItem } from "../components/AthleteListItem";
 
 // TODO: P0 Data validation screen
 // TODO: P0 Adjust start and end date
