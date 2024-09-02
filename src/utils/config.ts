@@ -11,6 +11,7 @@ const setEnvs = () => {
     CHALLENGE_END_DATE,
     STRAVA_CLIENT_ID,
     STRAVA_CLIENT_SECRET,
+    BASE_URL,
   } = process.env;
 
   if (
@@ -20,7 +21,8 @@ const setEnvs = () => {
     !CHALLENGE_START_DATE ||
     !CHALLENGE_END_DATE ||
     !STRAVA_CLIENT_ID ||
-    !STRAVA_CLIENT_SECRET
+    !STRAVA_CLIENT_SECRET ||
+    !BASE_URL
   ) {
     throw new Error("Missing environment variables");
   }
@@ -43,6 +45,7 @@ const setEnvs = () => {
     STRAVA_CLIENT_SECRET: STRAVA_CLIENT_SECRET,
     CHALLENGE_START_DATE: startDate,
     CHALLENGE_END_DATE: endDate,
+    BASE_URL,
   } as const;
 
   return envs;
