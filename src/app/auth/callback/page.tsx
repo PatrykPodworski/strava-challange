@@ -47,7 +47,7 @@ const AuthCallback = () => {
   return (
     <main className="text-center grow">
       <h2 className="text-xl font-bold">
-        {`Congratulations, ${athlete.name}! You've been added to the leaderboard.`}
+        {`Congratulations, ${athlete.name}! You've joined the challenge. Your results should appear in the leaderboard in 2 minutes.`}
       </h2>
       <p>
         Click{" "}
