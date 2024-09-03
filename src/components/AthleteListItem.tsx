@@ -2,6 +2,7 @@ import clsx from "clsx";
 import Athlete from "@/lib/athletes/Athlete";
 import formatToHours from "@/utils/formatToHours";
 import formatToKilometers from "@/utils/formatToKilometers";
+import Link from "next/link";
 
 export const AthleteListItem = ({
   athlete,
@@ -9,10 +10,10 @@ export const AthleteListItem = ({
   place,
 }: AthleteListItemProps) => {
   return (
-    <a
+    <Link
       key={athlete.userId}
       className="flex gap-3 items-center p-2 cursor-pointer"
-      href={`https://www.strava.com/athletes/${athlete.userId}`}
+      href={`athletes/${athlete.userId}`}
     >
       <div
         className={clsx(
@@ -22,7 +23,7 @@ export const AthleteListItem = ({
       >
         {place}
       </div>
-      <div className="flex flex-col text-lg">
+      <div className="flex flex-col text-lg hover:underline">
         <span>{athlete.name}</span>
         <p className="text-gray-500 text-md">
           <span>
@@ -31,7 +32,7 @@ export const AthleteListItem = ({
           </span>
         </p>
       </div>
-    </a>
+    </Link>
   );
 };
 
