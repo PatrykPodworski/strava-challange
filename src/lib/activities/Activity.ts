@@ -1,4 +1,5 @@
 type Activity = {
+  id: number;
   name: string;
   distance: number;
   time: number;
