@@ -1,8 +1,8 @@
 import getAthletesWithStatistics from "../lib/getAthletesWithStatistics";
 import { AthleteListItem } from "../components/AthleteListItem";
 import config from "@/utils/config";
+import { LastUpdate } from "@/components/LastUpdate";
 
-// TODO: P0 Data validation screen
 // TODO: P1 Club link
 // TODO: P2 Unify imports
 // TODO: P3 Logging wrapper (start, end, errors)
@@ -23,8 +23,6 @@ const Home = async () => {
     (a, b) => b.statistics.totalTime - a.statistics.totalTime
   );
 
-  const lastUpdate = new Date();
-
   return (
     <main className="flex flex-col items-center grow gap-2 sm:gap-8">
       <div className="flex flex-col sm:gap-4">
@@ -37,10 +35,7 @@ const Home = async () => {
           />
         ))}
       </div>
-      <p className="text-gray-300 text-sm">
-        Last update: {lastUpdate.toLocaleDateString()}{" "}
-        {lastUpdate.toLocaleTimeString()}
-      </p>
+      <LastUpdate />
       <div className="flex flex-col gap-2 items-center text-center">
         <p>Not on the list? Click the button below to join the challenge!</p>
         <a

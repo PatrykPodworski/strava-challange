@@ -33,6 +33,7 @@ const getActivities = async (userId: number, token: string) => {
 
 const activitySchema = z.array(
   z.object({
+    id: z.number(),
     name: z.string().min(1),
     distance: z.number(),
     moving_time: z.number(),
@@ -53,6 +54,7 @@ const mapActivity = (
   activity: z.infer<typeof activitySchema>[number]
 ): Activity => {
   return {
+    id: activity.id,
     name: activity.name,
     distance: activity.distance,
     time: activity.moving_time,
