@@ -3,8 +3,7 @@ export const LastUpdate = () => {
 
   return (
     <p className="text-gray-300 text-sm">
-      Last update: {lastUpdate.toLocaleDateString()}{" "}
-      {lastUpdate.toLocaleTimeString()}
+      Last update: {lastUpdate.toLocaleString("pl-PL")}
     </p>
   );
 };

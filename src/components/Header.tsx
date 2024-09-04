@@ -12,9 +12,9 @@ export const Header = () => {
           XtraMile Sport
           <br /> Challenge 2024
         </h1>
-        <p className="text-gray-500 max-w-sm">
-          {CHALLENGE_START_DATE.toDateString()} -{" "}
-          {CHALLENGE_END_DATE.toDateString()}
+        <p className="text-gray-500 max-w-sm text-center">
+          {CHALLENGE_START_DATE.toLocaleDateString("pl-PL")} -{" "}
+          {CHALLENGE_END_DATE.toLocaleDateString("pl-PL")}
         </p>
       </div>
     </div>
