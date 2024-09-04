@@ -35,9 +35,13 @@ const AthletePage = async ({ params: { id } }: AthletePageProps) => {
         Recorded {activities.length} activities in the challenge
       </h3>
       <LastUpdate />
-      <div className="flex flex-col gap-4 my-8">
-        {activities.map((x) => (
-          <ActivityListItem key={x.id} activity={x} />
+      <div className="flex flex-col gap-12 my-8">
+        {activities.map((x, index) => (
+          <ActivityListItem
+            key={x.id}
+            activity={x}
+            index={activities.length - index}
+          />
         ))}
       </div>
       <BackButton />
