@@ -1,5 +1,6 @@
 import Image from "next/image";
 import config from "@/utils/config";
+import { formatDate } from "@/utils/formatDate";
 
 export const Header = () => {
   const { CHALLENGE_END_DATE, CHALLENGE_START_DATE } = config;
@@ -12,9 +13,8 @@ export const Header = () => {
           XtraMile Sport
           <br /> Challenge 2024
         </h1>
-        <p className="text-gray-500 max-w-sm text-center">
-          {CHALLENGE_START_DATE.toLocaleDateString("pl-PL")} -{" "}
-          {CHALLENGE_END_DATE.toLocaleDateString("pl-PL")}
+        <p className="text-gray-500 max-w-sm text-center text-xl">
+          {formatDate(CHALLENGE_START_DATE)} - {formatDate(CHALLENGE_END_DATE)}
         </p>
       </div>
     </div>

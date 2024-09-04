@@ -1,8 +1,10 @@
 import clsx from "clsx";
+import Link from "next/link";
+import { TimerIcon } from "@radix-ui/react-icons";
 import Athlete from "@/lib/athletes/Athlete";
 import formatToHours from "@/utils/formatToHours";
 import formatToKilometers from "@/utils/formatToKilometers";
-import Link from "next/link";
+import { Separator } from "./ui/separator";
 
 export const AthleteListItem = ({
   athlete,
@@ -12,7 +14,7 @@ export const AthleteListItem = ({
   return (
     <Link
       key={athlete.userId}
-      className="flex gap-3 items-center p-2 cursor-pointer"
+      className="flex gap-3 items-center p-2 cursor-pointer hover:bg-neutral-100 transition-colors duration-300 rounded"
       href={`athletes/${athlete.userId}`}
     >
       <div
@@ -23,13 +25,15 @@ export const AthleteListItem = ({
       >
         {place}
       </div>
-      <div className="flex flex-col text-lg hover:underline">
-        <span>{athlete.name}</span>
+      <div className="flex flex-col text-lg">
+        <span className="hover:underline">{athlete.name}</span>
         <p className="text-gray-500 text-md">
-          <span>
-            {formatToHours(statistics.totalTime)},{" "}
-            {formatToKilometers(statistics.totalDistance)}
-          </span>
+          <div className="flex gap-1 h-6 items-center text-base font-light">
+            <TimerIcon className="w-4 h-4" />
+            <span>{formatToHours(statistics.totalTime)}</span>
+            <Separator orientation="vertical" className="mx-1" />
+            <span>{formatToKilometers(statistics.totalDistance)}</span>
+          </div>
         </p>
       </div>
     </Link>
