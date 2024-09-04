@@ -10,7 +10,7 @@ export const ActivityListItem = ({ activity }: ActivityListItemProps) => {
       href={`https://www.strava.com/activities/${activity.id}`}
     >
       <p>
-        {activity.startDate.toLocaleDateString()} {activity.name}
+        {activity.startDate.toLocaleDateString("pl-PL")} {activity.name}
       </p>
       <p>
         {formatToHours(activity.time)} {formatToKilometers(activity.distance)}
