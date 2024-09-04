@@ -4,7 +4,7 @@ import formatToHours from "@/utils/formatToHours";
 import formatToKilometers from "@/utils/formatToKilometers";
 import { Separator } from "./ui/separator";
 import { formatDate } from "@/utils/formatDate";
-import { TimerIcon } from "@radix-ui/react-icons";
+import { RulerHorizontalIcon, TimerIcon } from "@radix-ui/react-icons";
 
 export const ActivityListItem = ({
   activity,
@@ -30,12 +30,12 @@ export const ActivityListItem = ({
             {formatToHours(activity.time)}
           </div>
           <Separator orientation="vertical" />
-          <span className="text-center">
+          <div className="flex items-center gap-1">
+            <RulerHorizontalIcon className="w-5 h-5" />
             {formatToKilometers(activity.distance)}
-          </span>
+          </div>
         </div>
       </div>
-      <Separator orientation="vertical" />
     </div>
   );
 };

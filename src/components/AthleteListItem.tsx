@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import Link from "next/link";
-import { TimerIcon } from "@radix-ui/react-icons";
+import { RulerHorizontalIcon, TimerIcon } from "@radix-ui/react-icons";
 import Athlete from "@/lib/athletes/Athlete";
 import formatToHours from "@/utils/formatToHours";
 import formatToKilometers from "@/utils/formatToKilometers";
@@ -32,6 +32,7 @@ export const AthleteListItem = ({
             <TimerIcon className="w-4 h-4" />
             <span>{formatToHours(statistics.totalTime)}</span>
             <Separator orientation="vertical" className="mx-1" />
+            <RulerHorizontalIcon className="w-4 h-4" />
             <span>{formatToKilometers(statistics.totalDistance)}</span>
           </div>
         </p>
