@@ -1,6 +1,7 @@
 import Image from "next/image";
 import config from "@/utils/config";
 import { formatDate } from "@/utils/formatDate";
+import { Calendar } from "lucide-react";
 
 export const Header = () => {
   const { CHALLENGE_END_DATE, CHALLENGE_START_DATE } = config;
@@ -13,7 +14,8 @@ export const Header = () => {
           XtraMile Sport
           <br /> Challenge 2024
         </h1>
-        <p className="text-gray-500 max-w-sm text-center text-xl">
+        <p className="text-gray-500 max-w-sm text-center text-xl flex items-center gap-2">
+          <Calendar />
           {formatDate(CHALLENGE_START_DATE)} - {formatDate(CHALLENGE_END_DATE)}
         </p>
       </div>

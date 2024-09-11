@@ -32,6 +32,7 @@ const Home = async () => {
             athlete={data.athlete}
             place={index + 1}
             statistics={data.statistics}
+            streaks={data.streaks}
           />
         ))}
       </div>

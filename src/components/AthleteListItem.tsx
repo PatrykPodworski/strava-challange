@@ -1,22 +1,20 @@
 import clsx from "clsx";
 import Link from "next/link";
-import { RulerHorizontalIcon, TimerIcon } from "@radix-ui/react-icons";
 import Athlete from "@/lib/athletes/Athlete";
 import formatToHours from "@/utils/formatToHours";
 import formatToKilometers from "@/utils/formatToKilometers";
 import { Separator } from "./ui/separator";
+import { StreaksLabel } from "./StreaksLabel";
+import { Clock, Route } from "lucide-react";
 
 export const AthleteListItem = ({
   athlete,
   statistics,
   place,
+  streaks,
 }: AthleteListItemProps) => {
   return (
-    <Link
-      key={athlete.userId}
-      className="flex gap-3 items-center p-2 cursor-pointer hover:bg-neutral-100 transition-colors duration-300 rounded"
-      href={`athletes/${athlete.userId}`}
-    >
+    <div className="flex gap-3 items-center p-2">
       <div
         className={clsx(
           "font-bold text-xl text-white rounded-full w-8 h-8 flex items-center justify-center",
@@ -25,19 +23,26 @@ export const AthleteListItem = ({
       >
         {place}
       </div>
-      <div className="flex flex-col text-lg">
-        <span className="hover:underline">{athlete.name}</span>
+      <div className="flex flex-col text-lg items-start">
+        <Link href={`athletes/${athlete.userId}`} className="hover:underline">
+          {athlete.name}
+        </Link>
         <p className="text-gray-500 text-md">
           <div className="flex gap-1 h-6 items-center text-base font-light">
-            <TimerIcon className="w-4 h-4" />
+            <Clock className="w-4 h-4" />
             <span>{formatToHours(statistics.totalTime)}</span>
             <Separator orientation="vertical" className="mx-1" />
-            <RulerHorizontalIcon className="w-4 h-4" />
+            <Route className="w-4 h-4" />
             <span>{formatToKilometers(statistics.totalDistance)}</span>
+            <Separator orientation="vertical" className="mx-1" />
+            <StreaksLabel
+              currentStreak={streaks.currentStreak}
+              longestStreak={streaks.longestStreak}
+            />
           </div>
         </p>
       </div>
-    </Link>
+    </div>
   );
 };
 
@@ -60,5 +65,9 @@ type AthleteListItemProps = {
   statistics: {
     totalTime: number;
     totalDistance: number;
+  };
+  streaks: {
+    currentStreak: number;
+    longestStreak: number;
   };
 };
