@@ -4,7 +4,7 @@ import config from "@/utils/config";
 import { LastUpdate } from "@/components/LastUpdate";
 
 // TODO: P1 Streaks (longest, current)
-// TODO: P2 Duration progress bar
+// TODO: P1 Duration progress bar
 // TODO: P3 Cumulative values with examples
 // TODO: P3 Compare with previous year
 // TODO: P3 Logging wrapper (start, end, errors)
