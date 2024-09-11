@@ -3,13 +3,13 @@ import { AthleteListItem } from "../components/AthleteListItem";
 import config from "@/utils/config";
 import { LastUpdate } from "@/components/LastUpdate";
 
-// TODO: P1 Club link
-// TODO: P2 Unify imports
-// TODO: P3 Logging wrapper (start, end, errors)
-// TODO: P3 Duration progress bar
+// TODO: P1 Streaks (longest, current)
+// TODO: P1 Duration progress bar
 // TODO: P3 Cumulative values with examples
 // TODO: P3 Compare with previous year
+// TODO: P3 Logging wrapper (start, end, errors)
 // TODO: P3 Remember the user
+// TODO: P3 Unify imports
 
 export const revalidate = 60;
 
@@ -32,6 +32,7 @@ const Home = async () => {
             athlete={data.athlete}
             place={index + 1}
             statistics={data.statistics}
+            streaks={data.streaks}
           />
         ))}
       </div>
