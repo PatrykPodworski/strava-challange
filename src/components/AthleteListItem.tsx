@@ -27,7 +27,7 @@ export const AthleteListItem = ({
         <Link href={`athletes/${athlete.userId}`} className="hover:underline">
           {athlete.name}
         </Link>
-        <p className="text-gray-500 text-md">
+        <div className="text-gray-500 text-md">
           <div className="flex gap-1 h-6 items-center text-base font-light">
             <Clock className="w-4 h-4" />
             <span>{formatToHours(statistics.totalTime)}</span>
@@ -40,7 +40,7 @@ export const AthleteListItem = ({
               longestStreak={streaks.longestStreak}
             />
           </div>
-        </p>
+        </div>
       </div>
     </div>
   );
