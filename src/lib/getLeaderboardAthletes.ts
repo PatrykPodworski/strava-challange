@@ -3,8 +3,7 @@ import { calculateStreaks } from "./activities/streaks/calculateStreaks";
 import getAthletes from "./athletes/getAthletes";
 import getAthletesActivities from "./getAthletesActivities";
 
-// TODO: P1 Rename
-const getAthletesWithStatistics = async () => {
+const getLeaderboardAthletes = async () => {
   const athletes = await getAthletes();
   const activities = await getAthletesActivities(athletes);
   const athletesWithStatistics = activities.map((athleteActivities) => {
@@ -33,4 +32,4 @@ const calculateStatistics = (activities: Activity[]) => {
   return statistics;
 };
 
-export default getAthletesWithStatistics;
+export default getLeaderboardAthletes;
