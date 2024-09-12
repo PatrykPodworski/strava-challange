@@ -4,7 +4,7 @@ import Athlete from "@/lib/athletes/Athlete";
 import formatToHours from "@/utils/formatToHours";
 import formatToKilometers from "@/utils/formatToKilometers";
 import { Separator } from "./ui/separator";
-import { StreaksLabel } from "./StreaksLabel";
+import { StreaksLabel, StreaksLabelProps } from "./StreaksLabel";
 import { Clock, Route } from "lucide-react";
 
 export const AthleteListItem = ({
@@ -23,22 +23,19 @@ export const AthleteListItem = ({
       >
         {place}
       </div>
-      <div className="flex flex-col text-lg items-start">
+      <div className="flex flex-col text-xl items-start">
         <Link href={`athletes/${athlete.userId}`} className="hover:underline">
           {athlete.name}
         </Link>
-        <p className="text-gray-500 text-md">
-          <div className="flex gap-1 h-6 items-center text-base font-light">
-            <Clock className="w-4 h-4" />
+        <p>
+          <div className="flex gap-1 h-7 items-center text-lg text-gray-500">
+            <Clock className="w-5 h-5" />
             <span>{formatToHours(statistics.totalTime)}</span>
             <Separator orientation="vertical" className="mx-1" />
-            <Route className="w-4 h-4" />
+            <Route className="w-5 h-5" />
             <span>{formatToKilometers(statistics.totalDistance)}</span>
             <Separator orientation="vertical" className="mx-1" />
-            <StreaksLabel
-              currentStreak={streaks.currentStreak}
-              longestStreak={streaks.longestStreak}
-            />
+            <StreaksLabel {...streaks} />
           </div>
         </p>
       </div>
@@ -66,8 +63,5 @@ type AthleteListItemProps = {
     totalTime: number;
     totalDistance: number;
   };
-  streaks: {
-    currentStreak: number;
-    longestStreak: number;
-  };
+  streaks: StreaksLabelProps;
 };

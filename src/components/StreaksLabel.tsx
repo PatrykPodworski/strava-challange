@@ -8,18 +8,25 @@ import { Flame } from "lucide-react";
 export const StreaksLabel = ({
   currentStreak,
   longestStreak,
+  isStreakActive,
 }: StreaksLabelProps) => {
   return (
-    <div className="flex gap-1 h-6 items-center text-base font-light">
-      <Flame className="w-4 h-4" />
-      <span>
-        {currentStreak} {currentStreak === 1 ? "day" : "days"}
-      </span>
-    </div>
+    <>
+      <div className="flex gap-1 items-center relative">
+        <Flame className="w-5 h-5" />
+        {!isStreakActive && currentStreak > 0 && (
+          <div className="absolute top-0 -right-2 bg-red-500 w-2 h-2 rounded-full" />
+        )}
+        <span>
+          {currentStreak} {currentStreak === 1 ? "day" : "days"}
+        </span>
+      </div>
+    </>
   );
 };
 
-type StreaksLabelProps = {
+export type StreaksLabelProps = {
   currentStreak: number;
   longestStreak: number;
+  isStreakActive: boolean;
 };
