@@ -1,5 +1,5 @@
 import getLeaderboardAthletes from "../lib/getLeaderboardAthletes";
-import { AthleteListItem } from "../components/AthleteListItem";
+import { AthleteListItem } from "../components/athleteList/AthleteListItem";
 import config from "@/utils/config";
 import { LastUpdate } from "@/components/LastUpdate";
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Athlete from "@/lib/athletes/Athlete";
 import formatToHours from "@/utils/formatToHours";
 import formatToKilometers from "@/utils/formatToKilometers";
-import { Separator } from "./ui/separator";
+import { Separator } from "../ui/separator";
 import { StreaksLabel, StreaksLabelProps } from "./StreaksLabel";
 import { Clock, Route } from "lucide-react";
 
@@ -30,20 +30,40 @@ export const AthleteListItem = ({
         </Link>
         <div>
           <div className="flex gap-1 items-center text-lg text-gray-500 flex-wrap">
-            <Clock className="w-5 h-5" />
-            <span className="flex-shrink-0">
-              {formatToHours(statistics.totalTime)}
-            </span>
-            <Separator orientation="vertical" className="mx-1 h-7" />
-            <Route className="w-5 h-5" />
-            <span>{formatToKilometers(statistics.totalDistance)}</span>
-            <Separator orientation="vertical" className="mx-1 h-7" />
-            <StreaksLabel {...streaks} />
+            <StatisticLabel
+              icon={<Clock className="w-5 h-5" />}
+              value={formatToHours(statistics.totalTime)}
+            />
+            <Separator orientation="vertical" className="mx-1 h-0 sm:h-7" />
+            <StatisticLabel
+              icon={<Route className="w-5 h-5" />}
+              value={formatToKilometers(statistics.totalDistance)}
+            />
+            <Separator orientation="vertical" className="mx-1 h-0 sm:h-7" />
+            <StreaksLabel
+              currentStreak={5}
+              isStreakActive={false}
+              longestStreak={10}
+            />
           </div>
         </div>
       </div>
     </div>
   );
+};
+
+const StatisticLabel = ({ icon, value }: StatisticLabelProps) => {
+  return (
+    <div className="flex gap-1 items-center text-lg text-gray-500">
+      {icon}
+      <span className="text-base">{value}</span>
+    </div>
+  );
+};
+
+type StatisticLabelProps = {
+  icon: React.ReactNode;
+  value: string;
 };
 
 const getColor = (index: number) => {
