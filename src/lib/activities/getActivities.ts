@@ -6,29 +6,30 @@ import { invalidTokenError } from "./errors";
 const getActivities = async (userId: number, token: string) => {
   console.log(`[getActivities] Getting activities for ${userId}`);
   const url = getUrl();
-  const response = await fetch(url, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  // const response = await fetch(url, {
+  //   headers: {
+  //     Authorization: `Bearer ${token}`,
+  //   },
+  // });
 
-  const data = await response.json();
-  if ("errors" in data) {
-    console.log(
-      `[getActivities] Error getting activities for ${userId}, ${JSON.stringify(
-        data
-      )}`
-    );
+  // const data = await response.json();
+  // if ("errors" in data) {
+  //   console.log(
+  //     `[getActivities] Error getting activities for ${userId}, ${JSON.stringify(
+  //       data
+  //     )}`
+  //   );
 
-    // TODO: P2 Detect invalid token
-    throw new Error(invalidTokenError);
-  }
+  //   // TODO: P2 Detect invalid token
+  //   // TODO: P2 Detect rate exceeded
+  //   throw new Error(invalidTokenError);
+  // }
 
-  const parsed = await activitySchema.parseAsync(data);
-  const mapped: Activity[] = parsed.map(mapActivity);
+  // const parsed = await activitySchema.parseAsync(data);
+  // const mapped: Activity[] = parsed.map(mapActivity);
 
-  console.log(`[getActivities] Got ${mapped.length} activities for ${userId}`);
-  return mapped;
+  // console.log(`[getActivities] Got ${mapped.length} activities for ${userId}`);
+  return [];
 };
 
 const activitySchema = z.array(
