@@ -10,8 +10,12 @@ export const StreaksPopoverContent = ({
           Add an activity today to keep your streak!
         </p>
       )}
-      <p>Longest streak: {longestStreak} days</p>
-      {isStreakAboutToBeLost && <p>Current streak: {currentStreak} days</p>}
+      <p>
+        Current streak: {currentStreak} {currentStreak === 1 ? "day" : "days"}
+      </p>
+      <p>
+        Longest streak: {longestStreak} {longestStreak === 1 ? "day" : "days"}
+      </p>
     </div>
   );
 };
