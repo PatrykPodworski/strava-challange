@@ -4,7 +4,6 @@ import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { StatisticLabel } from "./StatisticLabel";
 import { StreaksPopoverContent } from "./StreaksPopoverContent";
 
-// TODO: P1 Equal width of labels
 // TODO: P2 Colors
 // TODO: P3 Streak calendar
 export const StreaksLabel = ({
@@ -18,6 +17,8 @@ export const StreaksLabel = ({
     <Popover>
       <PopoverTrigger>
         <StatisticLabel
+          clickable
+          className="w-24"
           icon={
             <div className="relative">
               <Flame className="w-5 h-5" />
@@ -26,7 +27,7 @@ export const StreaksLabel = ({
               )}
             </div>
           }
-          value={`${currentStreak} ${currentStreak === 1 ? "day" : "days"}`}
+          value={`${88} ${currentStreak === 1 ? "day" : "days"}`}
         />
       </PopoverTrigger>
       <PopoverContent className="w-auto">

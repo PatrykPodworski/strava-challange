@@ -4,9 +4,15 @@ export const StatisticLabel = ({
   icon,
   value,
   clickable,
+  className,
 }: StatisticLabelProps) => {
   return (
-    <div className="flex gap-1 items-center text-lg text-gray-500">
+    <div
+      className={clsx(
+        "flex gap-1 items-center text-lg text-gray-500",
+        className
+      )}
+    >
       {icon}
       <span
         className={clsx(
@@ -24,4 +30,5 @@ type StatisticLabelProps = {
   icon: React.ReactNode;
   value: string;
   clickable?: boolean;
+  className?: string;
 };
