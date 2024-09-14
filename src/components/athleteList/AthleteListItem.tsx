@@ -39,11 +39,7 @@ export const AthleteListItem = ({
               icon={<Route className="w-5 h-5" />}
               value={formatToKilometers(statistics.totalDistance)}
             />
-            <StreaksLabel
-              currentStreak={5}
-              isStreakActive={false}
-              longestStreak={10}
-            />
+            <StreaksLabel {...streaks} />
           </div>
         </div>
       </div>
