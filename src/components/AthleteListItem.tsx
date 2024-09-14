@@ -7,6 +7,7 @@ import { Separator } from "./ui/separator";
 import { StreaksLabel, StreaksLabelProps } from "./StreaksLabel";
 import { Clock, Route } from "lucide-react";
 
+// TODO: P1 Improve mobile experience (view)
 export const AthleteListItem = ({
   athlete,
   statistics,
@@ -27,17 +28,19 @@ export const AthleteListItem = ({
         <Link href={`athletes/${athlete.userId}`} className="hover:underline">
           {athlete.name}
         </Link>
-        <p>
-          <div className="flex gap-1 h-7 items-center text-lg text-gray-500">
+        <div>
+          <div className="flex gap-1 items-center text-lg text-gray-500 flex-wrap">
             <Clock className="w-5 h-5" />
-            <span>{formatToHours(statistics.totalTime)}</span>
-            <Separator orientation="vertical" className="mx-1" />
+            <span className="flex-shrink-0">
+              {formatToHours(statistics.totalTime)}
+            </span>
+            <Separator orientation="vertical" className="mx-1 h-7" />
             <Route className="w-5 h-5" />
             <span>{formatToKilometers(statistics.totalDistance)}</span>
-            <Separator orientation="vertical" className="mx-1" />
+            <Separator orientation="vertical" className="mx-1 h-7" />
             <StreaksLabel {...streaks} />
           </div>
-        </p>
+        </div>
       </div>
     </div>
   );
