@@ -21,6 +21,7 @@ const getActivities = async (userId: number, token: string) => {
     );
 
     // TODO: P2 Detect invalid token
+    // TODO: P2 Detect rate exceeded
     throw new Error(invalidTokenError);
   }
 

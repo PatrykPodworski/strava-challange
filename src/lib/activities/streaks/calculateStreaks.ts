@@ -6,9 +6,9 @@ import { UTCDate } from "@date-fns/utc";
 export const calculateStreaks = (
   activities: Pick<Activity, "startDate">[],
   today: Date
-): Response => {
+): Streaks => {
   if (activities.length === 0) {
-    return { currentStreak: 0, longestStreak: 0 };
+    return { currentStreak: 0, longestStreak: 0, isStreakActive: false };
   }
 
   const daysWithActivities = Array.from(
@@ -31,15 +31,18 @@ export const calculateStreaks = (
   );
 
   const lastDay = daysWithActivities.at(-1)!;
-  const isCurrentStreakActive = lastDay === todayDay;
+  const isStreakExtendable = lastDay >= todayDay - 1;
+  const isStreakActive = lastDay === todayDay;
 
   return {
-    currentStreak: isCurrentStreakActive ? currentStreak : 0,
+    currentStreak: isStreakExtendable ? currentStreak : 0,
     longestStreak,
+    isStreakActive: isStreakActive,
   };
 };
 
-type Response = {
+type Streaks = {
   currentStreak: number;
   longestStreak: number;
+  isStreakActive: boolean;
 };

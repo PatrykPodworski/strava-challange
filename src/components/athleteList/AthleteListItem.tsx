@@ -3,9 +3,9 @@ import Link from "next/link";
 import Athlete from "@/lib/athletes/Athlete";
 import formatToHours from "@/utils/formatToHours";
 import formatToKilometers from "@/utils/formatToKilometers";
-import { Separator } from "./ui/separator";
-import { StreaksLabel } from "./StreaksLabel";
+import { StreaksLabel, StreaksLabelProps } from "./StreaksLabel";
 import { Clock, Route } from "lucide-react";
+import { StatisticLabel } from "./StatisticLabel";
 
 export const AthleteListItem = ({
   athlete,
@@ -23,22 +23,23 @@ export const AthleteListItem = ({
       >
         {place}
       </div>
-      <div className="flex flex-col text-lg items-start">
+      <div className="flex flex-col text-xl items-start">
         <Link href={`athletes/${athlete.userId}`} className="hover:underline">
           {athlete.name}
         </Link>
-        <div className="text-gray-500 text-md">
-          <div className="flex gap-1 h-6 items-center text-base font-light">
-            <Clock className="w-4 h-4" />
-            <span>{formatToHours(statistics.totalTime)}</span>
-            <Separator orientation="vertical" className="mx-1" />
-            <Route className="w-4 h-4" />
-            <span>{formatToKilometers(statistics.totalDistance)}</span>
-            <Separator orientation="vertical" className="mx-1" />
-            <StreaksLabel
-              currentStreak={streaks.currentStreak}
-              longestStreak={streaks.longestStreak}
+        <div>
+          <div className="flex items-center text-lg text-gray-500 flex-wrap">
+            <StatisticLabel
+              className="w-20"
+              icon={<Clock className="w-5 h-5" />}
+              value={formatToHours(statistics.totalTime)}
             />
+            <StatisticLabel
+              className="w-28"
+              icon={<Route className="w-5 h-5" />}
+              value={formatToKilometers(statistics.totalDistance)}
+            />
+            <StreaksLabel {...streaks} />
           </div>
         </div>
       </div>
@@ -66,8 +67,5 @@ type AthleteListItemProps = {
     totalTime: number;
     totalDistance: number;
   };
-  streaks: {
-    currentStreak: number;
-    longestStreak: number;
-  };
+  streaks: StreaksLabelProps;
 };
