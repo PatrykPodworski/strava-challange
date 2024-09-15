@@ -1,3 +1,4 @@
+import { UTCDate } from "@date-fns/utc";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -27,12 +28,12 @@ const setEnvs = () => {
     throw new Error("Missing environment variables");
   }
 
-  const startDate = new Date(CHALLENGE_START_DATE);
+  const startDate = new UTCDate(CHALLENGE_START_DATE);
   if (isNaN(startDate.getTime())) {
     throw new Error("Invalid CHALLENGE_START_DATE");
   }
 
-  const endDate = new Date(CHALLENGE_END_DATE);
+  const endDate = new UTCDate(CHALLENGE_END_DATE);
   if (isNaN(endDate.getTime())) {
     throw new Error("Invalid CHALLENGE_END_DATE");
   }
