@@ -2,10 +2,11 @@ import clsx from "clsx";
 import Link from "next/link";
 import Athlete from "@/lib/athletes/Athlete";
 import formatToHours from "@/utils/formatToHours";
-import formatToKilometers from "@/utils/formatToKilometers";
 import { StreaksLabel, StreaksLabelProps } from "./StreaksLabel";
-import { Clock, Route } from "lucide-react";
+import { Clock } from "lucide-react";
 import { StatisticLabel } from "./StatisticLabel";
+import { Statistics } from "@/lib/calculateStatistics";
+import { DistanceLabel } from "./DistanceLabel";
 
 export const AthleteListItem = ({
   athlete,
@@ -34,11 +35,7 @@ export const AthleteListItem = ({
               icon={<Clock className="w-5 h-5" />}
               value={formatToHours(statistics.totalTime)}
             />
-            <StatisticLabel
-              className="w-28"
-              icon={<Route className="w-5 h-5" />}
-              value={formatToKilometers(statistics.totalDistance)}
-            />
+            <DistanceLabel {...statistics.distance} />
             <StreaksLabel {...streaks} />
           </div>
         </div>
@@ -63,9 +60,6 @@ const getColor = (index: number) => {
 type AthleteListItemProps = {
   place: number;
   athlete: Athlete;
-  statistics: {
-    totalTime: number;
-    totalDistance: number;
-  };
+  statistics: Statistics;
   streaks: StreaksLabelProps;
 };
