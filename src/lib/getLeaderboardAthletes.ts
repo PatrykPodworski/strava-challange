@@ -5,7 +5,7 @@ import getAthletesActivities from "./getAthletesActivities";
 
 const getLeaderboardAthletes = async () => {
   const athletes = await getAthletes();
-  const activities = await getAthletesActivities(athletes.slice(0, 1));
+  const activities = await getAthletesActivities(athletes);
   const athletesWithStatistics = activities.map((athleteActivities) => {
     const statistics = calculateStatistics(athleteActivities.activities);
     const streaks = calculateStreaks(athleteActivities.activities, new Date());
