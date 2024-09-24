@@ -2,7 +2,7 @@ import { z } from "zod";
 import Activity from "./Activity";
 import config from "@/utils/config";
 import { invalidTokenError } from "./errors";
-import { isActivityType } from "./ActivityType";
+import { mapToActivityType } from "./ActivityType";
 
 const getActivities = async (userId: number, token: string) => {
   console.log(`[getActivities] Getting activities for ${userId}`);
@@ -62,7 +62,7 @@ const mapActivity = (
     distance: activity.distance,
     time: activity.moving_time,
     startDate: new Date(activity.start_date),
-    type: isActivityType(activity.type) ? activity.type : "Other",
+    type: mapToActivityType(activity.type),
   };
 };
 
