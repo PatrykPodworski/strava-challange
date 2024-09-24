@@ -1,6 +1,6 @@
-import Activity from "./activities/Activity";
 import { calculateStreaks } from "./activities/streaks/calculateStreaks";
 import getAthletes from "./athletes/getAthletes";
+import { calculateStatistics } from "./calculateStatistics";
 import getAthletesActivities from "./getAthletesActivities";
 
 const getLeaderboardAthletes = async () => {
@@ -17,19 +17,6 @@ const getLeaderboardAthletes = async () => {
   });
 
   return athletesWithStatistics;
-};
-
-const calculateStatistics = (activities: Activity[]) => {
-  const statistics = activities.reduce(
-    (acc, activity) => {
-      acc.totalDistance += activity.distance;
-      acc.totalTime += activity.time;
-      return acc;
-    },
-    { totalDistance: 0, totalTime: 0 }
-  );
-
-  return statistics;
 };
 
 export default getLeaderboardAthletes;
