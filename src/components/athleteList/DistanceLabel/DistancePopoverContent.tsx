@@ -1,24 +1,23 @@
 import formatToKilometers from "@/utils/formatToKilometers";
 
-// TODO: P1 Do not show if all distances are 0
 // TODO: P2 Add icons
 // TODO: P3 Sort by distance
 export const DistancePopoverContent = ({
-  walk,
-  ride,
-  run,
+  walkDistance,
+  rideDistance,
+  runDistance,
 }: DistancePopoverContentProps) => {
   return (
     <div className="text-sm text-gray-700">
-      {walk > 0 && <p>Walk: {formatToKilometers(walk)} km</p>}
-      {run > 0 && <p>Run: {formatToKilometers(run)} km</p>}
-      {ride > 0 && <p>Ride: {formatToKilometers(ride)} km</p>}
+      {walkDistance > 0 && <p>Walk: {formatToKilometers(walkDistance)}</p>}
+      {runDistance > 0 && <p>Run: {formatToKilometers(runDistance)}</p>}
+      {rideDistance > 0 && <p>Ride: {formatToKilometers(rideDistance)}</p>}
     </div>
   );
 };
 
 export type DistancePopoverContentProps = {
-  walk: number;
-  ride: number;
-  run: number;
+  walkDistance: number;
+  rideDistance: number;
+  runDistance: number;
 };

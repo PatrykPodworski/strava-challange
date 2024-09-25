@@ -3,11 +3,13 @@ import { AthleteListItem } from "../components/athleteList/AthleteListItem";
 import config from "@/utils/config";
 import { LastUpdate } from "@/components/LastUpdate";
 
-// TODO: P1 Duration progress bar
 // TODO: P2 Cumulative values with examples (openAI, structured output)
+// TODO: P2 Time stats popover
+// TODO: P2 Calories data
 // TODO: P2 Distance leaderboard
 // TODO: P2 Streaks leaderboard
 // TODO: P3 Timelapse
+// TODO: P3 Activity map
 // TODO: P3 Compare with previous year
 // TODO: P3 Logging wrapper (start, end, errors)
 // TODO: P3 Remember the user
