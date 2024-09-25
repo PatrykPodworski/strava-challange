@@ -10,9 +10,9 @@ export const DistancePopoverContent = ({
 }: DistancePopoverContentProps) => {
   return (
     <div className="text-sm text-gray-700">
-      {walkDistance > 0 && <p>Walk: {formatToKilometers(walkDistance)} km</p>}
-      {runDistance > 0 && <p>Run: {formatToKilometers(runDistance)} km</p>}
-      {rideDistance > 0 && <p>Ride: {formatToKilometers(rideDistance)} km</p>}
+      {walkDistance > 0 && <p>Walk: {formatToKilometers(walkDistance)}</p>}
+      {runDistance > 0 && <p>Run: {formatToKilometers(runDistance)}</p>}
+      {rideDistance > 0 && <p>Ride: {formatToKilometers(rideDistance)}</p>}
     </div>
   );
 };
