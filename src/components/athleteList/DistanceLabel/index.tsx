@@ -7,7 +7,10 @@ import {
   DistancePopoverContentProps,
 } from "./DistancePopoverContent";
 
-export const DistanceLabel = ({ total, ...props }: DistanceLabelProps) => {
+export const DistanceLabel = ({
+  totalDistance,
+  ...props
+}: DistanceLabelProps) => {
   return (
     <Popover>
       <PopoverTrigger>
@@ -15,7 +18,7 @@ export const DistanceLabel = ({ total, ...props }: DistanceLabelProps) => {
           clickable
           className="w-28"
           icon={<Route className="w-5 h-5" />}
-          value={formatToKilometers(total)}
+          value={formatToKilometers(totalDistance)}
         />
       </PopoverTrigger>
       <PopoverContent className="w-auto">
@@ -26,5 +29,5 @@ export const DistanceLabel = ({ total, ...props }: DistanceLabelProps) => {
 };
 
 export type DistanceLabelProps = DistancePopoverContentProps & {
-  total: number;
+  totalDistance: number;
 };
