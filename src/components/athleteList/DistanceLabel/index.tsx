@@ -11,11 +11,13 @@ export const DistanceLabel = ({
   totalDistance,
   ...props
 }: DistanceLabelProps) => {
+  const hasAnyDistance = totalDistance > 0;
+
   return (
     <Popover>
-      <PopoverTrigger>
+      <PopoverTrigger disabled={!hasAnyDistance}>
         <StatisticLabel
-          clickable
+          clickable={hasAnyDistance}
           className="w-28"
           icon={<Route className="w-5 h-5" />}
           value={formatToKilometers(totalDistance)}

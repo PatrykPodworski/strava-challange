@@ -1,6 +1,5 @@
 import formatToKilometers from "@/utils/formatToKilometers";
 
-// TODO: P1 Do not show if all distances are 0
 // TODO: P2 Add icons
 // TODO: P3 Sort by distance
 export const DistancePopoverContent = ({
