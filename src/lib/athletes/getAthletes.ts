@@ -2,7 +2,7 @@ import { z } from "zod";
 import config from "@/utils/config";
 import { recordSchema, mapAthlete } from "./Record";
 
-const URL = `https://api.airtable.com/v0/${config.AIRTABLE_BASE_ID}/${config.AIRTABLE_TABLE}?maxRecords=20&view=Grid%20view`;
+const URL = `https://api.airtable.com/v0/${config.AIRTABLE_BASE_ID}/${config.AIRTABLE_TABLE}?maxRecords=20&filterByFormula=IsDeleted%3D0`;
 
 const getAthletes = async () => {
   const response = await fetch(URL, {
