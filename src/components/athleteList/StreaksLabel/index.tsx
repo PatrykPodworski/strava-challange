@@ -20,9 +20,7 @@ export const StreaksLabel = ({
           className="w-24"
           icon={
             <div className="relative">
-              <Flame
-                className={clsx("w-5 h-5", getFlameColor(currentStreak))}
-              />
+              <Flame className={clsx("w-5 h-5", getIconColor(currentStreak))} />
               {isStreakAboutToBeLost && (
                 <div className="absolute bottom-0 right-0 w-2 h-2 bg-red-500 rounded-full" />
               )}
@@ -42,7 +40,7 @@ export const StreaksLabel = ({
   );
 };
 
-const getFlameColor = (currentStreak: number) => {
+const getIconColor = (currentStreak: number) => {
   switch (true) {
     case currentStreak > 59:
       return "text-red-500";
