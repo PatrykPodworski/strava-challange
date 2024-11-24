@@ -3,18 +3,19 @@ import { AthleteListItem } from "../components/athleteList/AthleteListItem";
 import config from "@/utils/config";
 import { LastUpdate } from "@/components/LastUpdate";
 
-// TODO: P2 Cumulative values with examples (openAI, structured output)
-// TODO: P2 Time stats popover
-// TODO: P2 Calories data
+// TODO: P1 Add og tags
+// TODO: P1 Timelapse
+// TODO: P1 Compare with previous year
+// TODO: P2 Time popover
 // TODO: P2 Distance leaderboard
+// TODO: P2 Cumulative values with examples (openAI, structured output)
 // TODO: P2 Streaks leaderboard
-// TODO: P3 Timelapse
-// TODO: P3 Activity map
-// TODO: P3 Compare with previous year
+// TODO: P2 Calories data
 // TODO: P3 Logging wrapper (start, end, errors)
 // TODO: P3 Remember the user
 // TODO: P3 Unify imports
 // TODO: P3 Store activities
+// TODO: P3 Activity map
 
 export const revalidate = 60;
 
