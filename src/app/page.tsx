@@ -3,7 +3,6 @@ import { AthleteListItem } from "../components/athleteList/AthleteListItem";
 import config from "@/utils/config";
 import { LastUpdate } from "@/components/LastUpdate";
 
-// TODO: P1 Add og tags
 // TODO: P1 Timelapse
 // TODO: P1 Compare with previous year
 // TODO: P2 Time popover

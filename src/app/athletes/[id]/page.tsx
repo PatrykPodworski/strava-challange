@@ -8,7 +8,9 @@ import { BackButton } from "./BackButton";
 
 export const revalidate = 60;
 
-const AthletePage = async ({ params: { id } }: AthletePageProps) => {
+const AthletePage = async ({ params }: AthletePageProps) => {
+  const { id } = await params;
+
   const userId = parseInt(id, 10);
   const athlete = await getAthlete(userId);
 
@@ -50,9 +52,9 @@ const AthletePage = async ({ params: { id } }: AthletePageProps) => {
 };
 
 type AthletePageProps = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
 export default AthletePage;
