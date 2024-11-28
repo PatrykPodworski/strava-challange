@@ -4,9 +4,36 @@ import config from "@/utils/config";
 import { invalidTokenError } from "./errors";
 import { mapToActivityType } from "./ActivityType";
 
+const PAGE_SIZE = 200;
+
 const getActivities = async (userId: number, token: string) => {
   console.log(`[getActivities] Getting activities for ${userId}`);
-  const url = getUrl();
+
+  let activities: Activity[] = [];
+  let page = 1;
+
+  while (page < 3) {
+    const pageActivities = await getActivitiesPage(userId, token, page);
+    activities.push(...pageActivities);
+
+    page++;
+    if (pageActivities.length < PAGE_SIZE) {
+      break;
+    }
+  }
+
+  console.log(
+    `[getActivities] Got ${activities.length} activities for ${userId}`
+  );
+  return activities;
+};
+
+const getActivitiesPage = async (
+  userId: number,
+  token: string,
+  page: number
+) => {
+  const url = getUrl(page);
   const response = await fetch(url, {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -28,8 +55,6 @@ const getActivities = async (userId: number, token: string) => {
 
   const parsed = await activitySchema.parseAsync(data);
   const mapped: Activity[] = parsed.map(mapActivity);
-
-  console.log(`[getActivities] Got ${mapped.length} activities for ${userId}`);
   return mapped;
 };
 
@@ -44,11 +69,11 @@ const activitySchema = z.array(
   })
 );
 
-const getUrl = () => {
+const getUrl = (page: number) => {
   const { CHALLENGE_END_DATE, CHALLENGE_START_DATE } = config;
   const before = CHALLENGE_END_DATE.valueOf() / 1000;
   const after = CHALLENGE_START_DATE.valueOf() / 1000;
-  const url = `https://www.strava.com/api/v3/athlete/activities?after=${after}&before=${before}&per_page=200&page=1`;
+  const url = `https://www.strava.com/api/v3/athlete/activities?after=${after}&before=${before}&per_page=${PAGE_SIZE}&page=${page}`;
 
   return url;
 };
