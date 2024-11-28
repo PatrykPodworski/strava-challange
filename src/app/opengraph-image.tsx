@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 import { join } from "node:path";
 import { readFile } from "node:fs/promises";
 
-// TODO: P0 Add text to the image
+// TODO: P2 Add text to the image
 export default async function Image() {
   const logoData = await readFile(join(process.cwd(), "public/trophy.png"));
   const logoBase64 = Buffer.from(logoData).toString("base64");
