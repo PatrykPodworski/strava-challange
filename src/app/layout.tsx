@@ -21,7 +21,9 @@ export default function RootLayout({
         <div className="flex flex-col justify-between min-h-screen p-4 sm:p-8 bg-neutral-50 text-neutral-900">
           <PolyfillContext>
             <Header />
-            {children}
+            <main className="flex flex-col items-center grow gap-2 sm:gap-8 m-auto">
+              {children}
+            </main>
             <Footer />
           </PolyfillContext>
         </div>

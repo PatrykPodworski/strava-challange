@@ -23,7 +23,11 @@ const getLeaderboardAthletes = async () => {
     };
   });
 
-  return athletesWithStatistics;
+  const sorted = athletesWithStatistics.sort(
+    (a, b) => b.statistics.totalTime - a.statistics.totalTime
+  );
+
+  return sorted;
 };
 
 export default getLeaderboardAthletes;
