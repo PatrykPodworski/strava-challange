@@ -1,13 +1,14 @@
 import getLeaderboardAthletes from "../lib/getLeaderboardAthletes";
-import { AthleteListItem } from "../components/athleteList/AthleteListItem";
 import { LastUpdate } from "@/components/LastUpdate";
 import { JoinChallengeButton } from "@/components/JoinChallengeButton";
 import { ChallengeProgress } from "@/components/Header/ChallengeProgress";
+import { getTodayChallengeDay } from "@/lib/challengeProgress/getTodayChallengeDay";
+import { AthleteList } from "@/components/athleteList/AthleteList";
 
 // TODO: P1 Timelapse
 // TODO: P1 Compare with previous year
+// TODO: P1 Distance leaderboard
 // TODO: P2 Time popover
-// TODO: P2 Distance leaderboard
 // TODO: P2 Cumulative values with examples (openAI, structured output)
 // TODO: P2 Streaks leaderboard
 // TODO: P2 Calories data
@@ -21,20 +22,13 @@ export const revalidate = 60;
 
 const Home = async () => {
   const athletes = await getLeaderboardAthletes();
+  const currentDay = getTodayChallengeDay();
 
   return (
     <>
-      <ChallengeProgress />
+      <ChallengeProgress currentDay={currentDay} />
       <div className="flex flex-col sm:gap-4">
-        {athletes.map(({ athlete, statistics, streaks }, index) => (
-          <AthleteListItem
-            key={athlete.userId}
-            athlete={athlete}
-            place={index + 1}
-            statistics={statistics}
-            streaks={streaks}
-          />
-        ))}
+        <AthleteList athletes={athletes} />
       </div>
       <LastUpdate />
       <div className="flex flex-col gap-2 items-center text-center">
