@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { PolyfillContext } from "../context/polyfill";
 import { satoshi } from "./fonts";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "XtraMile Sport Challenge 2024",
@@ -25,6 +26,7 @@ export default function RootLayout({
             <Footer />
           </PolyfillContext>
         </div>
+        <Analytics />
       </body>
     </html>
   );
