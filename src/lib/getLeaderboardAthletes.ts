@@ -1,3 +1,5 @@
+"use server";
+
 import config from "@/utils/config";
 import { calculateStreaks } from "./activities/streaks/calculateStreaks";
 import getAthletes from "./athletes/getAthletes";
