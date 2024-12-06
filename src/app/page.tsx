@@ -1,4 +1,4 @@
-import getLeaderboardAthletes from "../lib/getLeaderboardAthletes";
+import getLeaderboardAthletes from "../lib/leaderboard/getLeaderboardAthletes";
 import { LastUpdate } from "@/components/LastUpdate";
 import { JoinChallengeButton } from "@/components/JoinChallengeButton";
 import { ChallengeProgress } from "@/components/Header/ChallengeProgress";

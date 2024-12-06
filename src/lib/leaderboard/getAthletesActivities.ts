@@ -1,5 +1,5 @@
-import Athlete from "./athletes/Athlete";
-import { tryGetAthleteActivities } from "./tryGetAthleteActivities";
+import Athlete from "../athletes/Athlete";
+import { tryGetAthleteActivities } from "../tryGetAthleteActivities";
 
 const getAthletesActivities = async (athletes: Athlete[]) => {
   const activities = await Promise.all(
