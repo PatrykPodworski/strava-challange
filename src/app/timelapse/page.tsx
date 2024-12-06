@@ -2,7 +2,6 @@
 
 import { AthleteList } from "@/components/athleteList/AthleteList";
 import { ChallengeProgress } from "@/components/Header/ChallengeProgress";
-import { LastUpdate } from "@/components/LastUpdate";
 import { useEffect, useState } from "react";
 import { useTimelapseCurrentDay } from "./useTimelapseCurrentDay";
 import { UTCDate } from "@date-fns/utc";
@@ -12,11 +11,11 @@ import {
   RawAthleteActivities,
 } from "@/lib/leaderboard/getRawAthleteActivities";
 import { processAthleteActivities } from "@/lib/leaderboard/processAthleteActivities";
+import { AthleteListSkeleton } from "@/components/athleteList/AthleteListSkeleton";
 
 const NEXT_PUBLIC_CHALLENGE_START_DATE =
   process.env.NEXT_PUBLIC_CHALLENGE_START_DATE;
 
-// TODO: P0: Loading skeleton
 // TODO: P0: Reorder animation
 // TODO: P0: Count up animation
 // TODO: P0: Restart timelapse
@@ -41,8 +40,11 @@ const Timelapse = () => {
   return (
     <>
       <ChallengeProgress currentDay={currentDay} />
-      <AthleteList athletes={filteredAthletes} />
-      <LastUpdate />
+      {isLoading ? (
+        <AthleteListSkeleton />
+      ) : (
+        <AthleteList athletes={filteredAthletes} />
+      )}
     </>
   );
 };
