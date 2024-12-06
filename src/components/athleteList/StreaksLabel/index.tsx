@@ -59,7 +59,7 @@ const getFlameColor = (currentStreak: number) => {
   }
 };
 
-export type StreaksLabelProps = {
+type StreaksLabelProps = {
   currentStreak: number;
   longestStreak: number;
   isStreakActive: boolean;

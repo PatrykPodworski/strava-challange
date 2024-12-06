@@ -8,8 +8,8 @@ const setEnvs = () => {
     AIRTABLE_API_KEY,
     AIRTABLE_BASE_ID,
     AIRTABLE_TABLE,
-    CHALLENGE_START_DATE,
-    CHALLENGE_END_DATE,
+    NEXT_PUBLIC_CHALLENGE_START_DATE,
+    NEXT_PUBLIC_CHALLENGE_END_DATE,
     STRAVA_CLIENT_ID,
     STRAVA_CLIENT_SECRET,
     BASE_URL,
@@ -19,8 +19,8 @@ const setEnvs = () => {
     !AIRTABLE_API_KEY ||
     !AIRTABLE_BASE_ID ||
     !AIRTABLE_TABLE ||
-    !CHALLENGE_START_DATE ||
-    !CHALLENGE_END_DATE ||
+    !NEXT_PUBLIC_CHALLENGE_START_DATE ||
+    !NEXT_PUBLIC_CHALLENGE_END_DATE ||
     !STRAVA_CLIENT_ID ||
     !STRAVA_CLIENT_SECRET ||
     !BASE_URL
@@ -28,22 +28,22 @@ const setEnvs = () => {
     throw new Error("Missing environment variables");
   }
 
-  const startDate = new UTCDate(CHALLENGE_START_DATE);
+  const startDate = new UTCDate(NEXT_PUBLIC_CHALLENGE_START_DATE);
   if (isNaN(startDate.getTime())) {
-    throw new Error("Invalid CHALLENGE_START_DATE");
+    throw new Error("Invalid NEXT_PUBLIC_CHALLENGE_START_DATE");
   }
 
-  const endDate = new UTCDate(CHALLENGE_END_DATE);
+  const endDate = new UTCDate(NEXT_PUBLIC_CHALLENGE_END_DATE);
   if (isNaN(endDate.getTime())) {
-    throw new Error("Invalid CHALLENGE_END_DATE");
+    throw new Error("Invalid NEXT_PUBLIC_CHALLENGE_END_DATE");
   }
 
   const envs = {
     AIRTABLE_API_KEY,
     AIRTABLE_BASE_ID,
     AIRTABLE_TABLE,
-    STRAVA_CLIENT_ID: STRAVA_CLIENT_ID,
-    STRAVA_CLIENT_SECRET: STRAVA_CLIENT_SECRET,
+    STRAVA_CLIENT_ID,
+    STRAVA_CLIENT_SECRET,
     CHALLENGE_START_DATE: startDate,
     CHALLENGE_END_DATE: endDate,
     BASE_URL,

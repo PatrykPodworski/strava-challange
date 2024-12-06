@@ -1,9 +1,9 @@
+import { getChallengeProgress } from "@/lib/challengeProgress/getChallengeProgress";
 import { Progress } from "../ui/progress";
-import { getChallengeProgress } from "../../lib/getChallengeProgress";
 
 // TODO: P2 Component testing (start is 1st, end is 100%, finished state)
-export const ChallengeProgress = () => {
-  const { currentDay, daysLeft, progress, isFinished } = getChallengeProgress();
+export const ChallengeProgress = ({ currentDay }: ChallengeProgressProps) => {
+  const { daysLeft, progress, isFinished } = getChallengeProgress(currentDay);
 
   return (
     <div className="w-full">
@@ -20,4 +20,8 @@ export const ChallengeProgress = () => {
       )}
     </div>
   );
+};
+
+type ChallengeProgressProps = {
+  currentDay: number;
 };

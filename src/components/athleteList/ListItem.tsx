@@ -2,18 +2,19 @@ import clsx from "clsx";
 import Link from "next/link";
 import Athlete from "@/lib/athletes/Athlete";
 import formatToHours from "@/utils/formatToHours";
-import { StreaksLabel, StreaksLabelProps } from "./StreaksLabel";
+import { StreaksLabel } from "./StreaksLabel";
 import { Clock } from "lucide-react";
 import { StatisticLabel } from "./StatisticLabel";
 import { Statistics } from "@/lib/calculateStatistics";
 import { DistanceLabel } from "./DistanceLabel";
+import { Streaks } from "@/lib/activities/streaks/Streaks";
 
-export const AthleteListItem = ({
+export const ListItem = ({
   athlete,
   statistics,
   place,
   streaks,
-}: AthleteListItemProps) => {
+}: ListItemProps) => {
   return (
     <div className="flex gap-3 items-center p-2">
       <div
@@ -57,9 +58,9 @@ const getColor = (index: number) => {
   }
 };
 
-type AthleteListItemProps = {
+type ListItemProps = {
   place: number;
   athlete: Athlete;
   statistics: Statistics;
-  streaks: StreaksLabelProps;
+  streaks: Streaks;
 };
