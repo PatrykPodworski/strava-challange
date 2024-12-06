@@ -5,7 +5,6 @@ import { ChallengeProgress } from "@/components/Header/ChallengeProgress";
 import { getTodayChallengeDay } from "@/lib/challengeProgress/getTodayChallengeDay";
 import { AthleteList } from "@/components/athleteList/AthleteList";
 
-// TODO: P1 Timelapse
 // TODO: P1 Compare with previous year
 // TODO: P1 Distance leaderboard
 // TODO: P2 Time popover

@@ -16,10 +16,11 @@ import { processAthleteActivities } from "@/lib/leaderboard/processAthleteActivi
 const NEXT_PUBLIC_CHALLENGE_START_DATE =
   process.env.NEXT_PUBLIC_CHALLENGE_START_DATE;
 
-// TODO: P0: Fix steaks counting
 // TODO: P0: Loading skeleton
 // TODO: P0: Reorder animation
 // TODO: P0: Count up animation
+// TODO: P0: Restart timelapse
+// TODO: P0: Menu with link
 const Timelapse = () => {
   const [athletes, setAthletes] = useState<RawAthleteActivities[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -60,7 +61,7 @@ const filterAthletes = (
     activities: athlete.activities.filter((x) => x.startDate <= filterDate),
   }));
 
-  const processed = processAthleteActivities(filtered);
+  const processed = processAthleteActivities(filtered, addDays(filterDate, -1));
   return processed;
 };
 

@@ -4,23 +4,18 @@ import { UTCDate } from "@date-fns/utc";
 import { getTodayChallengeProgress } from "../challengeProgress/getTodayChallengeProgress";
 import { RawAthleteActivities } from "./getRawAthleteActivities";
 
-const NEXT_PUBLIC_CHALLENGE_END_DATE =
-  process.env.NEXT_PUBLIC_CHALLENGE_END_DATE;
-
 export const processAthleteActivities = (
-  activities: RawAthleteActivities[]
+  activities: RawAthleteActivities[],
+  activeDate?: UTCDate
 ) => {
-  if (!NEXT_PUBLIC_CHALLENGE_END_DATE) {
-    throw new Error("NEXT_PUBLIC_CHALLENGE_END_DATE is not defined");
-  }
+  const dateForStreaks = getDateForStreaks(activeDate ?? new UTCDate());
 
   const athletesWithStatistics = activities.map((athleteActivities) => {
     const statistics = calculateStatistics(athleteActivities.activities);
-    const { isFinished } = getTodayChallengeProgress();
-    const today = isFinished
-      ? new UTCDate(NEXT_PUBLIC_CHALLENGE_END_DATE)
-      : new UTCDate();
-    const streaks = calculateStreaks(athleteActivities.activities, today);
+    const streaks = calculateStreaks(
+      athleteActivities.activities,
+      dateForStreaks
+    );
     return {
       athlete: athleteActivities.athlete,
       statistics,
@@ -33,4 +28,16 @@ export const processAthleteActivities = (
   );
 
   return sorted;
+};
+
+const getDateForStreaks = (activeDate: UTCDate) => {
+  const NEXT_PUBLIC_CHALLENGE_END_DATE =
+    process.env.NEXT_PUBLIC_CHALLENGE_END_DATE;
+
+  if (!NEXT_PUBLIC_CHALLENGE_END_DATE) {
+    throw new Error("NEXT_PUBLIC_CHALLENGE_END_DATE is not defined");
+  }
+
+  const { isFinished } = getTodayChallengeProgress(activeDate);
+  return isFinished ? new UTCDate(NEXT_PUBLIC_CHALLENGE_END_DATE) : activeDate;
 };
