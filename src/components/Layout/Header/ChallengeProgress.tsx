@@ -1,5 +1,5 @@
 import { getChallengeProgress } from "@/lib/challengeProgress/getChallengeProgress";
-import { Progress } from "../ui/progress";
+import { Progress } from "../../ui/progress";
 
 // TODO: P2 Component testing (start is 1st, end is 100%, finished state)
 export const ChallengeProgress = ({ currentDay }: ChallengeProgressProps) => {

@@ -1,7 +1,7 @@
 "use client";
 
 import { AthleteList } from "@/components/athleteList/AthleteList";
-import { ChallengeProgress } from "@/components/Header/ChallengeProgress";
+import { ChallengeProgress } from "@/components/Layout/Header/ChallengeProgress";
 import { useEffect, useState } from "react";
 import { useTimelapseCurrentDay } from "./useTimelapseCurrentDay";
 import { UTCDate } from "@date-fns/utc";

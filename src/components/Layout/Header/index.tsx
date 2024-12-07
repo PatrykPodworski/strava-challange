@@ -8,7 +8,7 @@ export const Header = () => {
   const { CHALLENGE_END_DATE, CHALLENGE_START_DATE } = config;
 
   return (
-    <div className="flex flex-col items-center gap-4 self-center text-center sm:flex-row sm:text-start sm:mb-4">
+    <div className="flex flex-col items-center gap-4 self-center text-center sm:flex-row sm:text-start sm:my-4">
       <Logo />
       <div>
         <h1 className="text-4xl font-bold mb-2">
