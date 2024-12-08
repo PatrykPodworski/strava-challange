@@ -2,7 +2,6 @@ import { Calendar } from "lucide-react";
 import config from "@/utils/config";
 import { formatDate } from "@/utils/formatDate";
 import { Logo } from "./Logo";
-import { ChallengeProgress } from "./ChallengeProgress";
 
 export const Header = () => {
   const { CHALLENGE_END_DATE, CHALLENGE_START_DATE } = config;

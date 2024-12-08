@@ -1,7 +1,7 @@
 import getLeaderboardAthletes from "../lib/leaderboard/getLeaderboardAthletes";
 import { LastUpdate } from "@/components/LastUpdate";
 import { JoinChallengeButton } from "@/components/JoinChallengeButton";
-import { ChallengeProgress } from "@/components/Layout/Header/ChallengeProgress";
+import { ChallengeProgress } from "@/components/ChallengeProgress";
 import { getTodayChallengeDay } from "@/lib/challengeProgress/getTodayChallengeDay";
 import { AthleteList } from "@/components/athleteList/AthleteList";
 

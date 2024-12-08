@@ -19,5 +19,9 @@ export const useTimelapseCurrentDay = (isLoading: boolean) => {
     };
   }, [challengeNumberOfDays, isLoading]);
 
-  return currentDay;
+  const restart = () => {
+    setCurrentDay(0);
+  };
+
+  return { currentDay, restart };
 };
