@@ -17,7 +17,7 @@ export const ListItem = ({
   streaks,
 }: ListItemProps) => {
   return (
-    <div className="flex gap-3 items-center p-2">
+    <li className="flex gap-3 items-center p-2">
       <PlaceMarker place={place} />
       <div className="flex flex-col text-xl items-start">
         <Link href={`athletes/${athlete.userId}`} className="hover:underline">
@@ -33,7 +33,7 @@ export const ListItem = ({
           <StreaksLabel {...streaks} />
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 

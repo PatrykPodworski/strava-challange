@@ -12,18 +12,19 @@ import {
 } from "@/lib/leaderboard/getRawAthleteActivities";
 import { processAthleteActivities } from "@/lib/leaderboard/processAthleteActivities";
 import { AthleteListSkeleton } from "@/components/athleteList/AthleteListSkeleton";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 const NEXT_PUBLIC_CHALLENGE_START_DATE =
   process.env.NEXT_PUBLIC_CHALLENGE_START_DATE;
 
-// TODO: P0: Reorder animation
-// TODO: P0: Count up animation
 // TODO: P0: Restart timelapse
-// TODO: P0: Menu with link
+// TODO: P0: Fix jumping at the end of the timelapse
+// TODO: P0: Configure the timelapse on the client
 const Timelapse = () => {
   const [athletes, setAthletes] = useState<RawAthleteActivities[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const currentDay = useTimelapseCurrentDay(isLoading);
+  const [parent] = useAutoAnimate();
 
   useEffect(() => {
     const getAthletes = async () => {
@@ -43,7 +44,7 @@ const Timelapse = () => {
       {isLoading ? (
         <AthleteListSkeleton />
       ) : (
-        <AthleteList athletes={filteredAthletes} />
+        <AthleteList athletes={filteredAthletes} ref={parent} />
       )}
     </>
   );
