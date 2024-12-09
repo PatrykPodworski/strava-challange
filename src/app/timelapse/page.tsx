@@ -14,13 +14,12 @@ import { filterAthletes } from "./filterAthletes";
 import { TimelapseControls } from "./TimelapseControls";
 
 // TODO: P0: Fix jumping at the end of the timelapse
-// TODO: P0: Play/Pause button
-// TODO: P0: Configure the timelapse on the client
+// TODO: P1: Show arrow on position change
 // TODO: P2: Clean up the /app folder
 const Timelapse = () => {
   const [athletes, setAthletes] = useState<RawAthleteActivities[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const { currentDay, restart } = useTimelapseCurrentDay(isLoading);
+  const { currentDay, ...controls } = useTimelapseCurrentDay(isLoading);
   const [parent] = useAutoAnimate();
 
   useEffect(() => {
@@ -43,7 +42,7 @@ const Timelapse = () => {
       ) : (
         <>
           <AthleteList athletes={filteredAthletes} ref={parent} />
-          <TimelapseControls onRestart={restart} />
+          <TimelapseControls {...controls} />
         </>
       )}
     </>
