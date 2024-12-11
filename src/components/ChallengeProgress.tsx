@@ -1,9 +1,9 @@
-import { Progress } from "../ui/progress";
-import { getChallengeProgress } from "../../lib/getChallengeProgress";
+import { getChallengeProgress } from "@/lib/challengeProgress/getChallengeProgress";
+import { Progress } from "./ui/progress";
 
 // TODO: P2 Component testing (start is 1st, end is 100%, finished state)
-export const ChallengeProgress = () => {
-  const { currentDay, daysLeft, progress, isFinished } = getChallengeProgress();
+export const ChallengeProgress = ({ currentDay }: ChallengeProgressProps) => {
+  const { daysLeft, progress, isFinished } = getChallengeProgress(currentDay);
 
   return (
     <div className="w-full">
@@ -13,11 +13,15 @@ export const ChallengeProgress = () => {
           Challenge finished!
         </div>
       ) : (
-        <div className="flex justify-between text-sm text-gray-500">
+        <div className="flex justify-between text-sm text-gray-500 mb-2">
           <span>Day {currentDay}</span>
           <span>{daysLeft} days left</span>
         </div>
       )}
     </div>
   );
+};
+
+type ChallengeProgressProps = {
+  currentDay: number;
 };

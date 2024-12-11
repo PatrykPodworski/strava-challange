@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { ReactNode } from "react";
 
 export const StatisticLabel = ({
   icon,
@@ -27,7 +28,7 @@ export const StatisticLabel = ({
 };
 
 type StatisticLabelProps = {
-  icon: React.ReactNode;
+  icon: ReactNode;
   value: string;
   clickable?: boolean;
   className?: string;

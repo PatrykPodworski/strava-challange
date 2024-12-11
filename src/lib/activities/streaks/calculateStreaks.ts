@@ -1,6 +1,7 @@
 import { getDayOfYear } from "date-fns";
 import Activity from "../Activity";
 import { UTCDate } from "@date-fns/utc";
+import { Streaks } from "./Streaks";
 
 // TODO: P3 Support multiple years
 export const calculateStreaks = (
@@ -12,10 +13,10 @@ export const calculateStreaks = (
   }
 
   const daysWithActivities = Array.from(
-    new Set(activities.map((x) => getDayOfYear(new UTCDate(x.startDate))))
+    new Set(activities.map((x) => getDayOfYear(x.startDate)))
   ).toSorted();
 
-  const todayDay = getDayOfYear(new UTCDate(today));
+  const todayDay = getDayOfYear(today);
 
   const [longestStreak, currentStreak] = daysWithActivities.reduce(
     ([longestStreak, currentStreak, previousDay], day) => {
@@ -39,10 +40,4 @@ export const calculateStreaks = (
     longestStreak,
     isStreakActive: isStreakActive,
   };
-};
-
-type Streaks = {
-  currentStreak: number;
-  longestStreak: number;
-  isStreakActive: boolean;
 };
