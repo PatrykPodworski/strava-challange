@@ -9,9 +9,9 @@ import {
 import { AthleteList } from "@/components/athleteList/AthleteList";
 import { ChallengeProgress } from "@/components/ChallengeProgress";
 import { AthleteListSkeleton } from "@/components/athleteList/AthleteListSkeleton";
+import { TimelapseControls } from "@/components/TimelapseControls";
 import { useTimelapseCurrentDay } from "./useTimelapseCurrentDay";
 import { filterAthletes } from "./filterAthletes";
-import { TimelapseControls } from "./TimelapseControls";
 
 // TODO: P1: Show arrow on position change
 // TODO: P2: Clean up the /app folder
