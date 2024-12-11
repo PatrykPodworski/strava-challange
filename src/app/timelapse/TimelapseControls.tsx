@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 import { ChangeEvent, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import clsx from "clsx";
 
-// TODO: P0: Fix jumping
 // TODO: P0: Divide the components
 export const TimelapseControls = ({
   restart,
@@ -20,7 +20,7 @@ export const TimelapseControls = ({
   const expand = () => setIsExpanded(true);
   return (
     <div className="flex flex-col gap-2">
-      <div className="flex gap-2">
+      <div className="flex gap-2 justify-between min-w-52">
         <Button variant="outline" onClick={restart}>
           <RotateCcw />
           Restart
@@ -64,7 +64,11 @@ const parseValue = (event: ChangeEvent<HTMLInputElement>) => {
 
 const PlayButton = ({ onClick, isPlaying }: PlayButtonProps) => {
   return (
-    <Button variant="outline" onClick={onClick}>
+    <Button
+      variant="outline"
+      onClick={onClick}
+      className={clsx("transition-all", isPlaying ? "w-[95px]" : "w-[84px]")}
+    >
       {isPlaying ? (
         <Pause className="text-red-500" />
       ) : (
