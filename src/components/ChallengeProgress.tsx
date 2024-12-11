@@ -13,7 +13,7 @@ export const ChallengeProgress = ({ currentDay }: ChallengeProgressProps) => {
           Challenge finished!
         </div>
       ) : (
-        <div className="flex justify-between text-sm text-gray-500">
+        <div className="flex justify-between text-sm text-gray-500 mb-2">
           <span>Day {currentDay}</span>
           <span>{daysLeft} days left</span>
         </div>

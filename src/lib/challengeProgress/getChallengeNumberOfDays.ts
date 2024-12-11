@@ -1,7 +1,7 @@
 import { UTCDate } from "@date-fns/utc";
 import { getDayOfYear } from "date-fns";
 
-// TODO: P0 Fix the config so it can be used in Client Components
+// TODO: P1 Fix the config so it can be used in Client Components
 const CHALLENGE_START_DATE = process.env.NEXT_PUBLIC_CHALLENGE_START_DATE;
 const CHALLENGE_END_DATE = process.env.NEXT_PUBLIC_CHALLENGE_END_DATE;
 

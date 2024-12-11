@@ -5,8 +5,9 @@ import { ChallengeProgress } from "@/components/ChallengeProgress";
 import { getTodayChallengeDay } from "@/lib/challengeProgress/getTodayChallengeDay";
 import { AthleteList } from "@/components/athleteList/AthleteList";
 
-// TODO: P1 Compare with previous year
+// TODO: P1 KKDG Challenge leaderboard
 // TODO: P1 Distance leaderboard
+// TODO: P2 Compare with previous year
 // TODO: P2 Time popover
 // TODO: P2 Cumulative values with examples (openAI, structured output)
 // TODO: P2 Streaks leaderboard

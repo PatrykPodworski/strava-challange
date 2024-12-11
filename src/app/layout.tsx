@@ -22,7 +22,7 @@ export default function RootLayout({
           <PolyfillContext>
             <Navigation />
             <Header />
-            <main className="flex flex-col items-center grow gap-2 sm:gap-8 m-auto">
+            <main className="flex flex-col items-center grow gap-2 sm:gap-6 m-auto">
               {children}
             </main>
             <Footer />

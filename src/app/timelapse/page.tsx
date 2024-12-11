@@ -13,7 +13,6 @@ import { useTimelapseCurrentDay } from "./useTimelapseCurrentDay";
 import { filterAthletes } from "./filterAthletes";
 import { TimelapseControls } from "./TimelapseControls";
 
-// TODO: P0: Fix jumping at the end of the timelapse
 // TODO: P1: Show arrow on position change
 // TODO: P2: Clean up the /app folder
 const Timelapse = () => {
