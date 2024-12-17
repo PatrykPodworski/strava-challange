@@ -6,6 +6,7 @@ import { Separator } from "./ui/separator";
 import { formatDate } from "@/utils/formatDate";
 import { RulerHorizontalIcon, TimerIcon } from "@radix-ui/react-icons";
 
+// TODO: P2 Move all shadcn/ui components
 export const ActivityListItem = ({
   activity,
   index,
