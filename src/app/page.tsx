@@ -17,6 +17,7 @@ import { AthleteList } from "@/components/athleteList/AthleteList";
 // TODO: P3 Unify imports
 // TODO: P3 Store activities
 // TODO: P3 Activity map
+// TODO: P3 Update readme
 
 export const revalidate = 60;
 
