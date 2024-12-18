@@ -6,7 +6,7 @@ export const ChallengeProgress = ({ currentDay }: ChallengeProgressProps) => {
   const { daysLeft, progress, isFinished } = getChallengeProgress(currentDay);
 
   return (
-    <div className="w-full">
+    <div className="w-full sm:min-w-[420px]">
       <Progress value={progress} />
       {isFinished ? (
         <div className="text-center text-lg text-gray-600">

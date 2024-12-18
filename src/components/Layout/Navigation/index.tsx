@@ -46,6 +46,7 @@ const leaderboards = [
   },
   {
     title: "KKDG",
+    href: "/kkdg",
   },
   {
     title: "Distance",

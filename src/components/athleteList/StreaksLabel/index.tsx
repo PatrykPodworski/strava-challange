@@ -21,11 +21,17 @@ export const StreaksLabel = ({
           icon={
             <div className="relative">
               <Flame
-                className={clsx("w-5 h-5", getFlameColor(currentStreak))}
+                className={clsx(
+                  "w-5 h-5 transition-colors",
+                  getFlameColor(currentStreak)
+                )}
               />
-              {isStreakAboutToBeLost && (
-                <div className="absolute bottom-0 right-0 w-2 h-2 bg-red-500 rounded-full" />
-              )}
+              <div
+                className={clsx(
+                  "absolute bottom-0 right-0 rounded-full transition-all duration-200 m-auto",
+                  isStreakAboutToBeLost ? "w-2 h-2 bg-red-500" : "w-0 h-0"
+                )}
+              />
             </div>
           }
           value={`${currentStreak} ${currentStreak === 1 ? "day" : "days"}`}
