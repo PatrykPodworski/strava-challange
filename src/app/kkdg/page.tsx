@@ -1,6 +1,14 @@
-import { AthleteList } from "@/components/athleteList/AthleteList";
+import { SingleStatList } from "@/components/athleteList/AthleteList";
 import { ChallengeProgress } from "@/components/ChallengeProgress";
 import { getTodayChallengeDay } from "@/lib/challengeProgress/getTodayChallengeDay";
+import { data } from "./data";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const Home = async () => {
   const currentDay = getTodayChallengeDay();
@@ -8,52 +16,21 @@ const Home = async () => {
   return (
     <>
       <ChallengeProgress currentDay={currentDay} />
-      <div className="flex flex-col sm:gap-4">
-        {data.map((x) => (
-          <div key={x.name}>
-            <p>
-              {x.name} - {x.distance} km
-            </p>
-          </div>
-        ))}
-      </div>
+      <SingleStatList athletes={data} />
+      <SourcePopover />
     </>
   );
 };
 
-export default Home;
+export const SourcePopover = () => (
+  <Popover>
+    <PopoverTrigger>
+      <Button variant="ghost">Source</Button>
+    </PopoverTrigger>
+    <PopoverContent>
+      <Image src="/2024-kkdg.png" alt="KKDG 2024" width={588} height={749} />
+    </PopoverContent>
+  </Popover>
+);
 
-const data = [
-  {
-    name: "Piotr G",
-    distance: 550.7,
-  },
-  {
-    name: "Anna R",
-    distance: 260.7,
-  },
-  {
-    name: "Patryk P",
-    distance: 225.3,
-  },
-  {
-    name: "Łukasz J",
-    distance: 151.0,
-  },
-  {
-    name: "Gosia G",
-    distance: 122.8,
-  },
-  {
-    name: "Marcin P",
-    distance: 25.4,
-  },
-  {
-    name: "Kasia S",
-    distance: 18.7,
-  },
-  {
-    name: "Paweł W",
-    distance: 16.8,
-  },
-];
+export default Home;
