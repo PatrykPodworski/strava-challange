@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export const SourcePopover = () => (
   <Popover>
-    <PopoverTrigger>
+    <PopoverTrigger asChild>
       <Button variant="ghost">Source</Button>
     </PopoverTrigger>
     <PopoverContent>
