@@ -6,7 +6,7 @@ import {
   getRawAthleteActivities,
   RawAthleteActivities,
 } from "@/lib/leaderboard/getRawAthleteActivities";
-import { AthleteList } from "@/components/athleteList/AthleteList";
+import { AthleteList } from "@/components/athleteList";
 import { ChallengeProgress } from "@/components/ChallengeProgress";
 import { AthleteListSkeleton } from "@/components/athleteList/AthleteListSkeleton";
 import { TimelapseControls } from "@/components/TimelapseControls";

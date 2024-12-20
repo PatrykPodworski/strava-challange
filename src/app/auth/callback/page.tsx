@@ -1,6 +1,6 @@
 "use client";
 
-import { LoadingIndicator } from "@/components/LoadingIndicator";
+import { LoadingIndicator } from "@/components/loading-indicator";
 import Athlete from "@/lib/athletes/Athlete";
 import { initializeAthlete } from "@/lib/athletes/initializeAthlete";
 import Link from "next/link";

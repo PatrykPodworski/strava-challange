@@ -3,9 +3,8 @@ import { LastUpdate } from "@/components/LastUpdate";
 import { JoinChallengeButton } from "@/components/JoinChallengeButton";
 import { ChallengeProgress } from "@/components/ChallengeProgress";
 import { getTodayChallengeDay } from "@/lib/challengeProgress/getTodayChallengeDay";
-import { AthleteList } from "@/components/athleteList/AthleteList";
+import { AthleteList } from "@/components/athleteList";
 
-// TODO: P1 KKDG Challenge leaderboard
 // TODO: P1 Distance leaderboard
 // TODO: P2 Compare with previous year
 // TODO: P2 Time popover

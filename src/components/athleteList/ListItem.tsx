@@ -1,14 +1,13 @@
-import clsx from "clsx";
 import Link from "next/link";
-import Athlete from "@/lib/athletes/Athlete";
-import formatToHours from "@/utils/formatToHours";
-import { StreaksLabel } from "./StreaksLabel";
 import { Clock } from "lucide-react";
-import { StatisticLabel } from "./StatisticLabel";
+import formatToHours from "@/utils/formatToHours";
+import Athlete from "@/lib/athletes/Athlete";
 import { Statistics } from "@/lib/calculateStatistics";
-import { DistanceLabel } from "./DistanceLabel";
 import { Streaks } from "@/lib/activities/streaks/Streaks";
-import { PlaceMarker } from "./PlaceMarker";
+import { StatisticLabel } from "@/components/statistic-label";
+import { PlaceMarker } from "@/components/place-maker";
+import { DistanceLabel } from "./DistanceLabel";
+import { StreaksLabel } from "./StreaksLabel";
 
 export const ListItem = ({
   athlete,

@@ -1,7 +1,11 @@
 import { Route } from "lucide-react";
-import { Popover, PopoverContent, PopoverTrigger } from "../../ui/popover";
-import { StatisticLabel } from "../StatisticLabel";
 import formatToKilometers from "@/utils/formatToKilometers";
+import { StatisticLabel } from "@/components/statistic-label";
+import {
+  PopoverTrigger,
+  Popover,
+  PopoverContent,
+} from "@/components/ui/popover";
 import {
   DistancePopoverContent,
   DistancePopoverContentProps,
