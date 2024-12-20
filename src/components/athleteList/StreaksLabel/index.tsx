@@ -1,7 +1,11 @@
 import { Flame } from "lucide-react";
 import clsx from "clsx";
-import { Popover, PopoverContent, PopoverTrigger } from "../../ui/popover";
-import { StatisticLabel } from "../StatisticLabel";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { StatisticLabel } from "@/components/statistic-label";
 import { StreaksPopoverContent } from "./StreaksPopoverContent";
 
 // TODO: P3 Streak calendar

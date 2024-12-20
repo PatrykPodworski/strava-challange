@@ -1,10 +1,8 @@
 import { Ref } from "react";
-import { AthleteListItem } from "./AthleteListItem";
-import {
-  ListItem,
-  SingleStatListItem,
-  SingleStatListItemProps,
-} from "./ListItem";
+import { ListItem } from "./ListItem";
+import { Streaks } from "@/lib/activities/streaks/Streaks";
+import Athlete from "@/lib/athletes/Athlete";
+import { Statistics } from "@/lib/calculateStatistics";
 
 export const AthleteList = ({ athletes, ref }: AthleteListProps) => {
   return (
@@ -22,22 +20,13 @@ export const AthleteList = ({ athletes, ref }: AthleteListProps) => {
   );
 };
 
-// TODO: P0 Move components
-export const SingleStatList = ({ athletes }: SingleStatListProps) => {
-  return (
-    <ol className="flex flex-col gap-2 sm:gap-4">
-      {athletes.map((x, index) => (
-        <SingleStatListItem key={index} {...x} place={index + 1} />
-      ))}
-    </ol>
-  );
-};
-
-type SingleStatListProps = {
-  athletes: Omit<SingleStatListItemProps, "place">[];
-};
-
 type AthleteListProps = {
   athletes: AthleteListItem[];
   ref?: Ref<HTMLOListElement>;
+};
+
+type AthleteListItem = {
+  athlete: Athlete;
+  statistics: Statistics;
+  streaks: Streaks;
 };

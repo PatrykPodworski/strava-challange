@@ -1,4 +1,4 @@
-import { SingleStatList } from "@/components/athleteList/AthleteList";
+import { SingleStatList } from "@/components/singleStatList";
 import { ChallengeProgress } from "@/components/ChallengeProgress";
 import { getTodayChallengeDay } from "@/lib/challengeProgress/getTodayChallengeDay";
 import { data } from "./data";
