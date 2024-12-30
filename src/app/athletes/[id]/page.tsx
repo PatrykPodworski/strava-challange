@@ -3,7 +3,7 @@ import { tryGetAthleteActivities } from "@/lib/try-get-athlete-activities";
 import { getAthlete } from "@/lib/athletes/getAthlete";
 import { ActivityListItem } from "@/components/activity-list-item";
 import { LastUpdate } from "@/components/last-update";
-import { BackButton } from "./BackButton";
+import { BackButton } from "./back-button";
 
 export const revalidate = 60;
 

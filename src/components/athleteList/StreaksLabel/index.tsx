@@ -6,7 +6,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { StatisticLabel } from "@/components/statistic-label";
-import { StreaksPopoverContent } from "./StreaksPopoverContent";
+import { StreaksPopoverContent } from "./streaks-popover-content";
 
 // TODO: P3 Streak calendar
 export const StreaksLabel = ({
