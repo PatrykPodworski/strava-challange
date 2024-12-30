@@ -1,8 +1,9 @@
-import { calculateStreaks } from "../activities/streaks/calculateStreaks";
-import { calculateStatistics } from "../calculateStatistics";
 import { UTCDate } from "@date-fns/utc";
+import { ProcessedAthlete } from "@/models/processed-athlete";
+import { calculateStreaks } from "../activities/streaks/calculateStreaks";
+import { calculateStatistics } from "../calculate-statistics";
 import { getTodayChallengeProgress } from "../challengeProgress/getTodayChallengeProgress";
-import { RawAthleteActivities } from "./getRawAthleteActivities";
+import { RawAthleteActivities } from "./get-raw-athlete-activities";
 
 export const processAthleteActivities = (
   activities: RawAthleteActivities[],
@@ -10,24 +11,22 @@ export const processAthleteActivities = (
 ) => {
   const dateForStreaks = getDateForStreaks(activeDate ?? new UTCDate());
 
-  const athletesWithStatistics = activities.map((athleteActivities) => {
-    const statistics = calculateStatistics(athleteActivities.activities);
-    const streaks = calculateStreaks(
-      athleteActivities.activities,
-      dateForStreaks
-    );
-    return {
-      athlete: athleteActivities.athlete,
-      statistics,
-      streaks,
-    };
-  });
-
-  const sorted = athletesWithStatistics.sort(
-    (a, b) => b.statistics.totalTime - a.statistics.totalTime
+  const athletesWithStatistics: ProcessedAthlete[] = activities.map(
+    (athleteActivities) => {
+      const statistics = calculateStatistics(athleteActivities.activities);
+      const streaks = calculateStreaks(
+        athleteActivities.activities,
+        dateForStreaks
+      );
+      return {
+        athlete: athleteActivities.athlete,
+        statistics,
+        streaks,
+      };
+    }
   );
 
-  return sorted;
+  return athletesWithStatistics;
 };
 
 const getDateForStreaks = (activeDate: UTCDate) => {

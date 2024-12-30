@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { ArrowUturnLeft } from "@/components/icons/ArrowUturnLeft";
-import { tryGetAthleteActivities } from "@/lib/tryGetAthleteActivities";
+import { tryGetAthleteActivities } from "@/lib/try-get-athlete-activities";
 import { getAthlete } from "@/lib/athletes/getAthlete";
-import { ActivityListItem } from "@/components/ActivityListItem";
-import { LastUpdate } from "@/components/LastUpdate";
-import { BackButton } from "./BackButton";
+import { ActivityListItem } from "@/components/activity-list-item";
+import { LastUpdate } from "@/components/last-update";
+import { BackButton } from "./back-button";
 
 export const revalidate = 60;
 

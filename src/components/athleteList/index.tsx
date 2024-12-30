@@ -1,8 +1,6 @@
 import { Ref } from "react";
-import { ListItem } from "./ListItem";
-import { Streaks } from "@/lib/activities/streaks/Streaks";
-import Athlete from "@/lib/athletes/Athlete";
-import { Statistics } from "@/lib/calculateStatistics";
+import { ListItem } from "./list-item";
+import { ProcessedAthlete } from "@/models/processed-athlete";
 
 export const AthleteList = ({ athletes, ref }: AthleteListProps) => {
   return (
@@ -21,12 +19,6 @@ export const AthleteList = ({ athletes, ref }: AthleteListProps) => {
 };
 
 type AthleteListProps = {
-  athletes: AthleteListItem[];
+  athletes: ProcessedAthlete[];
   ref?: Ref<HTMLOListElement>;
-};
-
-type AthleteListItem = {
-  athlete: Athlete;
-  statistics: Statistics;
-  streaks: Streaks;
 };

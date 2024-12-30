@@ -1,8 +1,8 @@
 import { SingleStatList } from "@/components/singleStatList";
-import { ChallengeProgress } from "@/components/ChallengeProgress";
+import { ChallengeProgress } from "@/components/challenge-progress";
 import { getTodayChallengeDay } from "@/lib/challengeProgress/getTodayChallengeDay";
 import { data } from "./data";
-import { SourcePopover } from "./SourcePopover";
+import { SourcePopover } from "./source-popover";
 
 const Home = async () => {
   const currentDay = getTodayChallengeDay();

@@ -9,7 +9,7 @@ import {
 import {
   DistancePopoverContent,
   DistancePopoverContentProps,
-} from "./DistancePopoverContent";
+} from "./distance-popover-content";
 
 export const DistanceLabel = ({
   totalDistance,

@@ -1,5 +1,5 @@
 import { z } from "zod";
-import Athlete from "./Athlete";
+import { Athlete } from "@/models/athlete";
 
 export const recordSchema = z.object({
   id: z.string(),

@@ -49,8 +49,10 @@ const leaderboards = [
   },
   {
     title: "Distance",
+    href: "/distance",
   },
   {
     title: "Streak",
+    href: "/streak",
   },
 ];

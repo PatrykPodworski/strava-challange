@@ -1,7 +1,7 @@
 import { Clock, Route, Flame } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { PlaceMarker } from "@/components/place-maker";
-import { StatisticLabelSkeleton } from "./StatisticLabelSkeleton";
+import { StatisticLabelSkeleton } from "./statistic-label-skeleton";
 
 export const AthleteListSkeleton = () => (
   <div className="flex flex-col sm:gap-4">

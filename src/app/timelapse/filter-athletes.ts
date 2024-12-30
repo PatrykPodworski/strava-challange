@@ -1,7 +1,8 @@
 import { UTCDate } from "@date-fns/utc";
 import { addDays } from "date-fns";
-import { RawAthleteActivities } from "@/lib/leaderboard/getRawAthleteActivities";
-import { processAthleteActivities } from "@/lib/leaderboard/processAthleteActivities";
+import { RawAthleteActivities } from "@/lib/leaderboard/get-raw-athlete-activities";
+import { processAthleteActivities } from "@/lib/leaderboard/process-athlete-activities";
+import { sortByTotalTime } from "@/models/processed-athlete";
 
 const NEXT_PUBLIC_CHALLENGE_START_DATE =
   process.env.NEXT_PUBLIC_CHALLENGE_START_DATE;
@@ -21,7 +22,8 @@ export const filterAthletes = (
   }));
 
   const processed = processAthleteActivities(filtered, addDays(filterDate, -1));
-  return processed;
+  const sorted = processed.toSorted(sortByTotalTime);
+  return sorted;
 };
 
 const getFilterDate = (currentDay: number) => {

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { Clock } from "lucide-react";
 import formatToHours from "@/utils/formatToHours";
-import Athlete from "@/lib/athletes/Athlete";
-import { Statistics } from "@/lib/calculateStatistics";
-import { Streaks } from "@/lib/activities/streaks/Streaks";
+import { Athlete } from "@/models/athlete";
+import { Statistics } from "@/models/statistics";
+import { Streaks } from "@/models/streaks";
 import { StatisticLabel } from "@/components/statistic-label";
 import { PlaceMarker } from "@/components/place-maker";
 import { DistanceLabel } from "./DistanceLabel";
