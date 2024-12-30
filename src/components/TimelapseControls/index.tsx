@@ -4,6 +4,8 @@ import { PlayButton } from "./PlayButton";
 import { RestartButton } from "./RestartButton";
 import { TimelapseConfig } from "./TimelapseConfig";
 
+// TODO: P2 Collapse animation
+
 export const TimelapseControls = ({
   restart,
   togglePlay,

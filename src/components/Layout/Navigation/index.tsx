@@ -53,5 +53,6 @@ const leaderboards = [
   },
   {
     title: "Streak",
+    href: "/streak",
   },
 ];

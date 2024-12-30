@@ -1,5 +1,5 @@
 import Activity from "./activities/Activity";
-import { Statistics } from "@/models/mr-statistics";
+import { Statistics } from "@/models/statistics";
 
 export const calculateStatistics = (activities: Activity[]): Statistics => {
   const statistics = activities.reduce(

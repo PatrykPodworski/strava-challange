@@ -1,6 +1,6 @@
 import { Athlete } from "./mr-athlete";
-import { Statistics } from "./mr-statistics";
-import { Streaks } from "./mr-streaks";
+import { Statistics } from "./statistics";
+import { Streaks } from "./streaks";
 
 export type ProcessedAthlete = {
   athlete: Athlete;
@@ -14,5 +14,5 @@ export const sortByTotalTime = (a: ProcessedAthlete, b: ProcessedAthlete) =>
 export const sortByDistance = (a: ProcessedAthlete, b: ProcessedAthlete) =>
   b.statistics.distance.totalDistance - a.statistics.distance.totalDistance;
 
-export const sortBySteaks = (a: ProcessedAthlete, b: ProcessedAthlete) =>
+export const sortBySteak = (a: ProcessedAthlete, b: ProcessedAthlete) =>
   b.streaks.longestStreak - a.streaks.longestStreak;

@@ -1,5 +1,5 @@
 import { getDayOfYear } from "date-fns";
-import { Streaks } from "@/models/mr-streaks";
+import { Streaks } from "@/models/streaks";
 import Activity from "../Activity";
 
 // TODO: P3 Support multiple years
