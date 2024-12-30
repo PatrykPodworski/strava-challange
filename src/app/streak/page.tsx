@@ -1,5 +1,5 @@
-import { LastUpdate } from "@/components/LastUpdate";
-import { ChallengeProgress } from "@/components/ChallengeProgress";
+import { LastUpdate } from "@/components/last-update";
+import { ChallengeProgress } from "@/components/challenge-progress";
 import { AthleteList } from "@/components/athleteList";
 import { getTodayChallengeDay } from "@/lib/challengeProgress/getTodayChallengeDay";
 import getLeaderboardAthletes from "@/lib/leaderboard/get-leaderboard-athletes";

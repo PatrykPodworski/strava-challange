@@ -1,6 +1,6 @@
-import { LastUpdate } from "@/components/LastUpdate";
-import { JoinChallengeButton } from "@/components/JoinChallengeButton";
-import { ChallengeProgress } from "@/components/ChallengeProgress";
+import { LastUpdate } from "@/components/last-update";
+import { JoinChallengeButton } from "@/components/join-challenge-button";
+import { ChallengeProgress } from "@/components/challenge-progress";
 import { AthleteList } from "@/components/athleteList";
 import getLeaderboardAthletes from "@/lib/leaderboard/get-leaderboard-athletes";
 import { getTodayChallengeDay } from "@/lib/challengeProgress/getTodayChallengeDay";

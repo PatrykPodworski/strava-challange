@@ -1,4 +1,4 @@
-import { Athlete } from "@/models/mr-athlete";
+import { Athlete } from "@/models/athlete";
 import { invalidTokenError } from "./activities/errors";
 import getActivities from "./activities/getActivities";
 import refreshAthleteToken from "./athletes/refreshAthleteToken";

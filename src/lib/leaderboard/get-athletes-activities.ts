@@ -1,4 +1,4 @@
-import { Athlete } from "@/models/mr-athlete";
+import { Athlete } from "@/models/athlete";
 import { tryGetAthleteActivities } from "../try-get-athlete-activities";
 
 const getAthletesActivities = async (athletes: Athlete[]) => {

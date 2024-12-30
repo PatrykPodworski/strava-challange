@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { AthleteList } from "@/components/athleteList";
-import { ChallengeProgress } from "@/components/ChallengeProgress";
+import { ChallengeProgress } from "@/components/challenge-progress";
 import { AthleteListSkeleton } from "@/components/athleteList/AthleteListSkeleton";
 import { TimelapseControls } from "@/components/TimelapseControls";
 import {

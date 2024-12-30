@@ -1,5 +1,5 @@
 import config from "@/utils/config";
-import { Athlete } from "@/models/mr-athlete";
+import { Athlete } from "@/models/athlete";
 import { recordSchema, mapAthlete } from "./Record";
 
 export const createAthlete = async (data: Omit<Athlete, "id">) => {

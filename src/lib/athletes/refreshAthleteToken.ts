@@ -1,6 +1,6 @@
 import { z } from "zod";
 import config from "@/utils/config";
-import { Athlete } from "@/models/mr-athlete";
+import { Athlete } from "@/models/athlete";
 import { updateAthlete } from "./updateAthlete";
 
 const refreshAthleteToken = async (athlete: Athlete) => {

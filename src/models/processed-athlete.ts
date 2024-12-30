@@ -1,4 +1,4 @@
-import { Athlete } from "./mr-athlete";
+import { Athlete } from "./athlete";
 import { Statistics } from "./statistics";
 import { Streaks } from "./streaks";
 
