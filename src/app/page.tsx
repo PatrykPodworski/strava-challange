@@ -6,7 +6,6 @@ import getLeaderboardAthletes from "@/lib/leaderboard/get-leaderboard-athletes";
 import { getTodayChallengeDay } from "@/lib/challengeProgress/getTodayChallengeDay";
 import { sortByTotalTime } from "@/models/processed-athlete";
 
-// TODO: P2 Streaks leaderboard
 // TODO: P2 Compare with previous year
 // TODO: P2 Time popover
 // TODO: P2 Cumulative values with examples (openAI, structured output)
