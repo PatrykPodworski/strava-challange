@@ -2,16 +2,16 @@
 
 import { useEffect, useState } from "react";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
-import {
-  getRawAthleteActivities,
-  RawAthleteActivities,
-} from "@/lib/leaderboard/getRawAthleteActivities";
 import { AthleteList } from "@/components/athleteList";
 import { ChallengeProgress } from "@/components/ChallengeProgress";
 import { AthleteListSkeleton } from "@/components/athleteList/AthleteListSkeleton";
 import { TimelapseControls } from "@/components/TimelapseControls";
-import { useTimelapseCurrentDay } from "./useTimelapseCurrentDay";
-import { filterAthletes } from "./filterAthletes";
+import {
+  getRawAthleteActivities,
+  RawAthleteActivities,
+} from "@/lib/leaderboard/get-raw-athlete-activities";
+import { useTimelapseCurrentDay } from "./use-timelapse-current-day";
+import { filterAthletes } from "./filter-athletes";
 
 // TODO: P1: Show arrow on position change
 // TODO: P2: Clean up the /app folder

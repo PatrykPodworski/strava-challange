@@ -1,7 +1,7 @@
 "use server";
 
 import getAthletes from "../athletes/getAthletes";
-import getAthletesActivities from "./getAthletesActivities";
+import getAthletesActivities from "./get-athletes-activities";
 
 export const getRawAthleteActivities = async () => {
   const athletes = await getAthletes();

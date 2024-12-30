@@ -1,6 +1,6 @@
+import { Athlete } from "@/models/mr-athlete";
 import { invalidTokenError } from "./activities/errors";
 import getActivities from "./activities/getActivities";
-import Athlete from "./athletes/Athlete";
 import refreshAthleteToken from "./athletes/refreshAthleteToken";
 
 export const tryGetAthleteActivities = async (athlete: Athlete) => {

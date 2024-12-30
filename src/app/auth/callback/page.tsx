@@ -1,7 +1,7 @@
 "use client";
 
 import { LoadingIndicator } from "@/components/loading-indicator";
-import Athlete from "@/lib/athletes/Athlete";
+import { Athlete } from "@/models/mr-athlete";
 import { initializeAthlete } from "@/lib/athletes/initializeAthlete";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";

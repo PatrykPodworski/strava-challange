@@ -1,6 +1,7 @@
 import Activity from "./activities/Activity";
+import { Statistics } from "@/models/mr-statistics";
 
-export const calculateStatistics = (activities: Activity[]) => {
+export const calculateStatistics = (activities: Activity[]): Statistics => {
   const statistics = activities.reduce(
     (acc, activity) => {
       acc.distance.totalDistance += activity.distance;
@@ -33,5 +34,3 @@ export const calculateStatistics = (activities: Activity[]) => {
 
   return statistics;
 };
-
-export type Statistics = ReturnType<typeof calculateStatistics>;

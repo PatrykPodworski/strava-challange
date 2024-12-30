@@ -1,4 +1,4 @@
-type Athlete = {
+export type Athlete = {
   id: string;
   userId: number;
   name: string;
@@ -6,5 +6,3 @@ type Athlete = {
   refreshToken: string;
   appCode: string;
 };
-
-export default Athlete;

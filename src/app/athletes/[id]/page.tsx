@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { ArrowUturnLeft } from "@/components/icons/ArrowUturnLeft";
-import { tryGetAthleteActivities } from "@/lib/tryGetAthleteActivities";
+import { tryGetAthleteActivities } from "@/lib/try-get-athlete-activities";
 import { getAthlete } from "@/lib/athletes/getAthlete";
 import { ActivityListItem } from "@/components/ActivityListItem";
 import { LastUpdate } from "@/components/LastUpdate";
