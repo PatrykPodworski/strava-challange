@@ -3,6 +3,7 @@ import Activity from "./Activity";
 import config from "@/utils/config";
 import { invalidTokenError } from "./errors";
 import { mapToActivityType } from "./ActivityType";
+import { writeActivitiesToFile } from "../data-writers/write-activities-to-file";
 
 const PAGE_SIZE = 200;
 
@@ -55,7 +56,7 @@ const getActivitiesPage = async (
 
   const parsed = await activitySchema.parseAsync(data);
   const mapped: Activity[] = parsed.map(mapActivity);
-  return mapped;
+  return data;
 };
 
 const activitySchema = z.array(

@@ -19,6 +19,8 @@ export const tryGetAthleteActivities = async (athlete: Athlete) => {
       );
       return activities;
     }
+
+    throw error;
   }
 
   return [];
