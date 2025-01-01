@@ -6,7 +6,11 @@ import { Activity } from "../models/a-activity";
 const LOCAL_ACTIVITIES_PATH = "src/lib/activities/local/data";
 
 export const getLocalAthleteActivities = async (userId: number) => {
-  const filePath = path.join(LOCAL_ACTIVITIES_PATH, `${userId}.json`);
+  const filePath = path.join(
+    process.cwd(),
+    LOCAL_ACTIVITIES_PATH,
+    `${userId}.json`
+  );
   console.log(
     `[getLocalAthleteActivities] Reading activities for ${userId} from ${filePath}`
   );
