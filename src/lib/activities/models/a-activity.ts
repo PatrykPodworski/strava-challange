@@ -1,6 +1,6 @@
-import { ActivityType } from "./ActivityType";
+import { ActivityType } from "./activity-type";
 
-type Activity = {
+export type Activity = {
   id: number;
   name: string;
   distance: number;
@@ -8,5 +8,3 @@ type Activity = {
   startDate: Date;
   type: ActivityType;
 };
-
-export default Activity;

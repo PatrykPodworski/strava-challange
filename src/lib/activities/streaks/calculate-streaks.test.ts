@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { calculateStreaks } from "./calculateStreaks";
+import { calculateStreaks } from "./calculate-streaks";
 
 test("calculateStreaks returns 0 streaks for empty activities array", () => {
   expect(calculateStreaks([], new Date())).toEqual({

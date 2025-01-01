@@ -1,6 +1,6 @@
 import { UTCDate } from "@date-fns/utc";
 import { ProcessedAthlete } from "@/models/processed-athlete";
-import { calculateStreaks } from "../activities/streaks/calculateStreaks";
+import { calculateStreaks } from "../activities/streaks/calculate-streaks";
 import { calculateStatistics } from "../calculate-statistics";
 import { getTodayChallengeProgress } from "../challengeProgress/getTodayChallengeProgress";
 import { RawAthleteActivities } from "./get-raw-athlete-activities";

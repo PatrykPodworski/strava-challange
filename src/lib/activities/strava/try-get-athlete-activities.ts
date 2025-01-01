@@ -1,7 +1,7 @@
 import { Athlete } from "@/models/athlete";
-import { invalidTokenError } from "./activities/errors";
-import getActivities from "./activities/getActivities";
-import refreshAthleteToken from "./athletes/refreshAthleteToken";
+import { invalidTokenError } from "../models/errors";
+import getActivities from "./get-activities";
+import refreshAthleteToken from "../../athletes/refreshAthleteToken";
 
 export const tryGetAthleteActivities = async (athlete: Athlete) => {
   try {
@@ -17,11 +17,9 @@ export const tryGetAthleteActivities = async (athlete: Athlete) => {
         updatedAthlete.userId,
         updatedAthlete.accessToken
       );
+
       return activities;
     }
-
     throw error;
   }
-
-  return [];
 };

@@ -1,6 +1,6 @@
 import { getDayOfYear } from "date-fns";
 import { Streaks } from "@/models/streaks";
-import Activity from "../Activity";
+import { Activity } from "../models/a-activity";
 
 // TODO: P3 Support multiple years
 export const calculateStreaks = (

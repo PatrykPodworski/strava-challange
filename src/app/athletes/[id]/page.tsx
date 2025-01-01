@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { tryGetAthleteActivities } from "@/lib/try-get-athlete-activities";
+import { tryGetAthleteActivities } from "@/lib/activities/strava/try-get-athlete-activities";
 import { getAthlete } from "@/lib/athletes/getAthlete";
 import { ActivityListItem } from "@/components/activity-list-item";
 import { LastUpdate } from "@/components/last-update";
 import { BackButton } from "./back-button";
+import { getLocalAthleteActivities } from "@/lib/activities/local/get-local-athlete-activities";
 
 export const revalidate = 60;
 
@@ -22,7 +23,7 @@ const AthletePage = async ({ params }: AthletePageProps) => {
     );
   }
 
-  const activities = await tryGetAthleteActivities(athlete);
+  const activities = await getLocalAthleteActivities(athlete.userId);
 
   return (
     <main className="flex flex-col items-center grow">
