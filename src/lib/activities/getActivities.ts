@@ -56,7 +56,7 @@ const getActivitiesPage = async (
 
   const parsed = await activitySchema.parseAsync(data);
   const mapped: Activity[] = parsed.map(mapActivity);
-  return data;
+  return mapped;
 };
 
 const activitySchema = z.array(
