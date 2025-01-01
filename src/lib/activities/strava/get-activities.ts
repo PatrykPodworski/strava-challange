@@ -1,8 +1,7 @@
-import { z } from "zod";
-import Activity from "./Activity";
 import config from "@/utils/config";
-import { invalidTokenError } from "./errors";
-import { mapToActivityType } from "./ActivityType";
+import { invalidTokenError } from "../models/errors";
+import { activitySchema, mapActivity } from "../common/activity-schema";
+import { Activity } from "../models/a-activity";
 
 const PAGE_SIZE = 200;
 
@@ -58,17 +57,6 @@ const getActivitiesPage = async (
   return mapped;
 };
 
-const activitySchema = z.array(
-  z.object({
-    id: z.number(),
-    name: z.string().min(1),
-    distance: z.number(),
-    moving_time: z.number(),
-    start_date: z.string().min(1),
-    type: z.string().min(1),
-  })
-);
-
 const getUrl = (page: number) => {
   const { CHALLENGE_END_DATE, CHALLENGE_START_DATE } = config;
   const before = CHALLENGE_END_DATE.valueOf() / 1000;
@@ -76,19 +64,6 @@ const getUrl = (page: number) => {
   const url = `https://www.strava.com/api/v3/athlete/activities?after=${after}&before=${before}&per_page=${PAGE_SIZE}&page=${page}`;
 
   return url;
-};
-
-const mapActivity = (
-  activity: z.infer<typeof activitySchema>[number]
-): Activity => {
-  return {
-    id: activity.id,
-    name: activity.name,
-    distance: activity.distance,
-    time: activity.moving_time,
-    startDate: new Date(activity.start_date),
-    type: mapToActivityType(activity.type),
-  };
 };
 
 export default getActivities;

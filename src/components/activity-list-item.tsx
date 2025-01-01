@@ -1,10 +1,10 @@
 import Link from "next/link";
-import Activity from "@/lib/activities/Activity";
 import formatToHours from "@/utils/formatToHours";
 import formatToKilometers from "@/utils/formatToKilometers";
 import { Separator } from "./ui/separator";
 import { formatDate } from "@/utils/formatDate";
 import { RulerHorizontalIcon, TimerIcon } from "@radix-ui/react-icons";
+import { Activity } from "@/lib/activities/models/a-activity";
 
 // TODO: P2 Move all shadcn/ui components
 export const ActivityListItem = ({

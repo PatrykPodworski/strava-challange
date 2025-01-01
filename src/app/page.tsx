@@ -6,7 +6,6 @@ import getLeaderboardAthletes from "@/lib/leaderboard/get-leaderboard-athletes";
 import { getTodayChallengeDay } from "@/lib/challengeProgress/getTodayChallengeDay";
 import { sortByTotalTime } from "@/models/processed-athlete";
 
-// TODO: P1 Store activities
 // TODO: P2 Compare with previous year
 // TODO: P2 Time popover
 // TODO: P2 Calories data
